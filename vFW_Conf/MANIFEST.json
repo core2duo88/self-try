@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "description": "",
+    "data": [
+        {
+            "file": "base_vfw.yaml",
+            "type": "HEAT",
+            "isBase": "true",
+            "data": [
+                {
+                    "file": "base_vfw_vio.env", 
+                    "type": "HEAT_ENV"
+                }
+            ]
+        }
+    ]
+}
