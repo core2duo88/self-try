@@ -1,54 +1,68 @@
 # Start Up ONAP based on VIO 4.0
 
+目录：
+
+  + [环境配置](#环境配置)
+  + [ONAP配置](#ONAP配置)
+  + [ENV文件](#ENV文件)
+  + [ONAP中可能出现的问题](#ONAP可能出现的问题)
+
+    + [sdc服务不可用](#sdc服务不可用)
+
 ## 更新日志
 
   * 2017-8-29
 
     + 排查SDC中BE启动失败问题，详情如下[SDC服务不可用](#sdc服务不可用)
 
+  * 2017-8-25
+
+    + 添加ONAP搭建过程，详情见[环境准备](#环境准备)、[ONAP配置](#ONAP配置)、[ENV文件](#ENV文件)
+    + 添加基本VIO的ONAP的配置文件
+
+      + 源文件
+
+        + [onap_openstack_float.env](ConfigFile/onap_openstack_float.env)
+        + [onap_openstack_float.yaml](ConfigFile/onap_openstack_float.yaml)
+
+      + 修改后的文件
+
+        + [onap_vio.env](ConfigFile/onap_vio.env)
+        + [onap_vio.yaml](ConfigFile/onap_vio.yaml)
+
 ## 环境准备
 
   1. Linux VM，作为Heatclient的工具
 
-  * python环境: 安装python, pip, virtualenv
+  * 安装python环境、OpenstackClient、HeatClinet，并配置相应的环境变量
 
-  ```
-  $ apt install python
-  $ apt install python-pip
-  $ pip install virtualenv, virtualenvwrapper
-  ```
+    参考如下：
+    ```
+    $ apt install python, python-pip
+    $ pip install virtualenv, virtualenvwrapper
+    $ pip install python-openstackclient, python-heatclient
 
-  * Openstack Clent: 安装及RC文件环境变量的配置
+    # 下载VIO的OpenStack RC文件，并进行配置
+    $ source admin-openrc.sh
+    ```
 
-  ```
-  $ pip install python-openstackclient, python-heatclient
-  ```
+    参考链接：
 
-  Ref:
+    [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/install_clients.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/install_clients.html)
 
-  [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/install_clients.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/install_clients.html)
+    [https://developer.rackspace.com/docs/cloud-orchestration/v1/getting-started/send-request-ovw/](https://developer.rackspace.com/docs/cloud-orchestration/v1/getting-started/send-request-ovw/)
 
-  [https://developer.rackspace.com/docs/cloud-orchestration/v1/getting-started/send-request-ovw/](https://developer.rackspace.com/docs/cloud-orchestration/v1/getting-started/send-request-ovw/)
+    [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/cli_openrc.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/cli_openrc.html)
 
-  * 下载OpenStack RC文件；配置本地环境变量
+  * 可能出现的问题
 
-  ```
-  $ source admin-openrc.sh
-  ```
+    + heatclient不能正常访问heatservice服务，出现SSL问题
 
-  Ref:
+    解决办法：使用`--insecure`选项
 
-  [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/cli_openrc.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/End_User_Guide/cli_openrc.html)
-
-  * **可能出现的问题**
-
-  + heatclient不能正常访问heatservice服务，出现SSL问题
-
-  解决办法：使用`--insecure`选项
-
-  ```
-  $ heat --insecure service-list
-  ```
+    ```
+    $ heat --insecure service-list
+    ```
 
   2. Linux VM信息，用于登录ONAP中的VMs
 
@@ -76,11 +90,11 @@
   $ openstack --insecure server list
   ```
 
-## ONAP配置工作
+## ONAP配置
 
   * Network
 
-    public: 10.154.9.0/24网段：连接外部网络
+    public: 10.154.9.0/24网段：用于VM的FloatingIp
 
     Internal: 192.168.15.0/24网段：用于VM私网地址
 
@@ -103,9 +117,9 @@
     |onap.large|4|4GB|50GB|
     |onap.xlarge|8|16GB|50GB|
 
-## ONAP YAML文件与ENV文件的配置
+## ENV文件
 
-  * ONAP REPO的时间及分支：25 Aug 2017, master
+  * ONAP REPO的时间及分支：25/Aug/2017, master
 
   * ENV文件：参照VIO系统环境，设定ONAP环境变量
 
@@ -113,14 +127,17 @@
 
     * dns_list, external_dns: dns的设定需使用VIO外部环境可用的DNS服务，即10.142.7.21(VIO环境中)
 
-  * 四种参数：每种参数都需要配置，需检查完整，以免在代码的更新中缺失或新增参数项
+  * 源文件
 
-    1-全部的ONAP组件通用
-    2-网络参数
-    3-DCAE参数
-    4-REPO参数
+    + [onap_openstack_float.env](ConfigFile/onap_openstack_float.env)
+    + [onap_openstack_float.yaml](ConfigFile/onap_openstack_float.yaml)
 
-## ONAP搭建过程中可能出现的问题
+  * 修改后的文件
+
+    + [onap_vio.env](ConfigFile/onap_vio.env)
+    + [onap_vio.yaml](ConfigFile/onap_vio.yaml)
+
+## ONAP中可能出现的问题
 
 ### sdc服务不可用
 
