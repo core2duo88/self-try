@@ -11,6 +11,16 @@
 
 ## 更新日志
 
+  * 2017-9-1
+
+    * 解决robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
+
+        + 主要文件
+
+          + [haproxy.cfy](ConfigFile/haproxy.cfg)
+          + [local_setting.py](ConfigFile/local_setting.py)
+          + [keystone.txt](keystone.txt)
+
   * 2017-8-29
 
     + 排查SDC中BE启动失败问题，详情如下[SDC服务不可用](#sdc服务不可用)
@@ -58,11 +68,31 @@
 
     + heatclient不能正常访问heatservice服务，出现SSL问题
 
-    解决办法：使用`--insecure`选项
+    解决办法一：使用`--insecure`选项
 
     ```
     $ heat --insecure service-list
     ```
+
+    解决办法二：使用vio.pem文件
+
+    ```
+    # 进入到VIO所在主机，将/etc/ssl/vio.pem 拷贝至heatclient所在主机的/etc/ssl/vio.pem
+    # 向admin-openrc.sh添加OS_CACERT环境变量
+    # export OS_CACERT=/etc/ssl/vio.pem
+    $ source admin-openrc.sh
+    $ openstack server list
+    ```
+
+    Ref:
+
+    [https://blogs.vmware.com/openstack/prepare-a-linux-vm-for-managing-openstack/](https://blogs.vmware.com/openstack/prepare-a-linux-vm-for-managing-openstack/)
+
+    解决办法三：turn off VIO中环境的verify机制
+
+    Ref：
+
+    [https://docs.openstack.org/mitaka/install-guide-obs/keystone-verify.html](https://docs.openstack.org/mitaka/install-guide-obs/keystone-verify.html)
 
   2. Linux VM信息，用于登录ONAP中的VMs
 
@@ -153,7 +183,7 @@
 
   具体参考如下：
 
-  ```shell
+  ```
   # 进入SDC所在的主机，Ip地址为10.154.9.75
   $ ssh -i onap_rsa ubuntu@10.154.9.75
 
@@ -204,4 +234,104 @@
   $ sudo docker rm $(sudo docker ps -a -q)
   $ cd /opt/
   $ sudo ./asdc_install.sh
+  ```
+
+### robot中的ssl问题
+
+  错误现象
+
+  在robot VM中执行检查(例如 `./demo.sh init`和`./ete.sh health`)时，container出现ssl认证失败。
+
+  ![robot_ssl](Image/sslfail.PNG)
+
+  原因分析
+
+  VIO环境中使用的时HTTPS协议，需要SSL的私钥认证，而robot中的container中没有相关私钥信息，导致认证失败。
+
+  解决办法
+
+  取消VIO中环境中的SSL认证过程。需要注意的是，VIO中SSL的认证过程由haproxy负责，OpenStack相关的配置，一般为默认选项。
+
+  主要步骤如下：
+
+  第一步：修改haproxy相关配置，并重启服务。
+  第二步：修改OpenStack endpoint相关信息。
+  第三步：修改robot中的配置信息，并重新启动服务。
+
+  参考过程如下：
+
+  第一步：修改haproxy相关配置，并重启服务。
+
+  ```
+  # haproxy的配置文件 /etc/haproxy/haproxy.cfy
+  # 将相应的listen下bing项中删除ssl相关信息
+
+  # 修改前
+  #  38 listen keystone-public
+  #  39  bind 10.154.2.225:5000 ssl crt /etc/ssl/vio.pem
+  #  40  balance roundrobin
+  #  41  option http-server-close
+  #  42  option httplog
+  #  43  option forwardfor
+  #  44  fullconn 1024
+  #  45  redirect scheme https code 301 if { hdr(host) -i 10.154.2.225 } !{ ssl_fc }
+  #  46  # redirect scheme http code 301 if { hdr(host) -i 10.154.2.225 } !{ ssl_fc }
+  #  47  rsprep ^Location:\ http://(.*) Location:\ https://\1
+  #  48  rsprep ^Location:\ http://(.*) Location:\ http://\1
+  #  49     server loadbalancer01 10.154.9.82:5001 check inter 3000
+  # 修改后
+  #  38 listen keystone-public
+  #  39  bind 10.154.2.225:5000
+  #  40  balance roundrobin
+  #  41  option http-server-close
+  #  42  option httplog
+  #  43  option forwardfor
+  #  44  fullconn 1024
+  #  45  redirect scheme https code 301 if { hdr(host) -i 10.154.2.225 } !{ ssl_fc }
+  #  46  # redirect scheme http code 301 if { hdr(host) -i 10.154.2.225 } !{ ssl_fc }
+  #  47  rsprep ^Location:\ http://(.*) Location:\ https://\1
+  #  48  rsprep ^Location:\ http://(.*) Location:\ http://\1
+  #  49     server loadbalancer01 10.154.9.82:5001 check inter 3000
+
+  # 除了horizon外，其他listen的相应服务也要改；horizon保持默认即可，如下所示
+  # 162 listen horizon
+  # 163  timeout client 300s
+  # 164  timeout client-fin 30s
+  # 165  timeout server 300s
+  # 166  timeout server-fin 30s
+  # 167  bind 10.154.2.225:80
+  # 168  bind 10.154.2.225:443 ssl crt /etc/ssl/vio.pem
+
+  # 修改本地配置文件 /etc/openstack-dashboard/local_setting.py
+  # 将FEDERATION_AUTH_URL = 'https://10.154.2.225:5000/v3'改为FEDERATION_AUTH_URL = 'http://10.154.2.225:5000/v3'
+
+  # 重启haproxy服务
+  $ service haproxy restart
+  ```
+
+  第二步：修改openstack endpoint。将endpoint的带有https的url全部disable，然后创建新的endpoint
+
+  ```
+  # 以keystone public为例
+  $ openstack endpoint list
+  # ID                               | Region | Service Name | Service Type   | Enabled | Interface | URL                                          
+  # 6c600fda93154ccd947fcbf967eec27b | nova   | keystone     | identity       | True    | public    | https://10.154.2.225:5000/v3
+
+  $ openstack endpoint create --region nova keystone public http://10.154.2.225:5000/v3
+  $ openstack endpoint set --disable 6c600fda93154ccd947fcbf967eec27b
+  $ openstack endpoint list
+  # ID                               | Region | Service Name | Service Type   | Enabled | Interface | URL                                          
+  # 6c600fda93154ccd947fcbf967eec27b | nova   | keystone     | identity       | False   | public    | https://10.154.2.225:5000/v3
+  # 0e6c1493c9de403397291ece700c205b | nova   | keystone     | identity       | True    | public    | http://10.154.2.225:5000/v3
+  ```
+
+  第三步：第三步：修改robot中的配置信息，并重新启动服务。
+
+  ```
+  # 将/opt/config/keystone.txt中的https://10.154.2.225:5000/v3改为http://10.154.2.225:5000/v3
+  # 删除容器
+  $ sudo docker rm $(sudo docker ps -a -q)
+  # 重启容器
+  $ cd /opt
+  $ sudo ./robot_install.sh
   ```
