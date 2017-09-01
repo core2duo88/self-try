@@ -188,7 +188,7 @@ WEBSSO_ENABLED = False
 # Determines which authentication choice to show as default.
 WEBSSO_INITIAL_CHOICE = "credentials"
 
-FEDERATION_AUTH_URL = 'https://10.154.2.225:5000/v3'
+FEDERATION_AUTH_URL = 'http://10.154.2.225:5000/v3'
 
 # The list of authentication mechanisms which include keystone
 # federation protocols and identity provider/federation protocol
