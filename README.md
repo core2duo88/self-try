@@ -11,6 +11,15 @@
 
 ## 更新日志
 
+  * 2017-9-5
+
+    * 更新robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
+
+      + 主要文件
+
+        + [keystone-proxy.conf](ConfigFile/keystone-proxy.conf)
+        + [keystone.conf](ConfigFile/keystone.conf)
+
   * 2017-9-1
 
     * 解决robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
@@ -254,13 +263,13 @@
 
   主要步骤如下：
 
-  第一步：修改haproxy相关配置，并重启服务。
+  第一步：修改haproxy相关配置(包括haproxy.cfg, keystone-proxy.conf, keystone.conf)，并重启服务。
   第二步：修改OpenStack endpoint相关信息。
   第三步：修改robot中的配置信息，并重新启动服务。
 
   参考过程如下：
 
-  第一步：修改haproxy相关配置，并重启服务。
+  第一步：修改haproxy相关配置，并重启服务。需要注意的是，VIO环境中Keystone相关服务配置在apache2上，随apache2一起启动。因此，apache2中关于keystone的配置也要相关的进行修改。
 
   ```
   # haproxy的配置文件 /etc/haproxy/haproxy.cfy
@@ -307,6 +316,28 @@
 
   # 重启haproxy服务
   $ service haproxy restart
+
+  # 修改apache2中相应的Keystone文件
+  # 文件目录：/etc/apache2/sites-available
+  # 三个文件: keystone-proxy.conf, keystone.conf
+  # 将其中的https替换为http
+  # 替换后如下：
+  # 文件keystone-proxy.conf
+  # <VirtualHost 10.154.9.72:5001>
+  # ProxyPass / http://10.154.9.72:5000/
+  # ProxyPassReverse / http://10.154.9.72:5000/
+  # ...
+  # Substitute "s|http://10.154.9.72|http://10.154.2.225|i"
+
+  # <VirtualHost 10.154.9.72:5359>
+  # ProxyPass / http://10.154.9.72:35357/
+  # ProxyPassReverse / http://10.154.9.72:35357/
+  # ...
+  # Substitute "s|http://10.154.9.72|http://10.154.2.225|i"
+
+  # 文件: keystone.conf
+  # 替换后如下：
+  # ServerName http://10.154.2.225:5000
   ```
 
   第二步：修改openstack endpoint。将endpoint的带有https的url全部disable，然后创建新的endpoint
