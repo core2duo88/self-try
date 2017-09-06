@@ -15,6 +15,11 @@
 
     * 更新robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
 
+      + 主要文件
+
+        + [keystone-proxy.conf](ConfigFile/keystone-proxy.conf)
+        + [keystone.conf](ConfigFile/keystone.conf)
+
   * 2017-9-1
 
     * 解决robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
