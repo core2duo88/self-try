@@ -11,6 +11,10 @@
 
 ## 更新日志
 
+  * 2017-9-6
+
+    * 添加[基于VIO部署ONAP的技巧](onap_based_on_vio.md)(主要是为了应对vio环境的不稳定性)
+
   * 2017-9-5
 
     * 更新robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
