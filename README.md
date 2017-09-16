@@ -384,20 +384,20 @@
 
   问题现象：
 
-    aai-inst1中的testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败，进而导致与之关联的testconfig_aai-traversal.api.simpledemo.openecomp.org_1容器和testconfig_aaiapi.simpledemo.openecomp.org_1容器启动失败。
+  aai-inst1中的testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败，进而导致与之关联的testconfig_aai-traversal.api.simpledemo.openecomp.org_1容器和testconfig_aaiapi.simpledemo.openecomp.org_1容器启动失败。
 
   问题的根源：
 
-    aai-resources需要访问aai-inst2 VM中的aai-hbase的资源，而且是通过aai.hbase.simpledemo.openecomp.org域名的方式进行访问。因此，域名解析失败导致testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败。
+  aai-resources需要访问aai-inst2 VM中的aai-hbase的资源，而且是通过aai.hbase.simpledemo.openecomp.org域名的方式进行访问。因此，域名解析失败导致testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败。
 
   解决办法：
 
-    第一步：判断aai-inst1和aai-inst2中是否可正常解析域名。
-    第二步：若不能解析域名，则查看dns-serverVM状态。
+  第一步：判断aai-inst1和aai-inst2中是否可正常解析域名。
+  第二步：若不能解析域名，则查看dns-serverVM状态。
 
   参考链接：
 
-    [https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm](https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm)
+  [https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm](https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm)
 
   需要的注意的是，如果dns-server VM能够正常提供域名解析服务，则在整个ONAP系统中的VM的均可ping通相关的域名。详见[ONAP系统中各VM的排查方法](onap_troubleshooting.md)
 
