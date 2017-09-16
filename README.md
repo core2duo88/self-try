@@ -11,6 +11,15 @@
 
 ## 更新日志
 
+  * 2017=9-15
+
+    * AAI VM的错误排查及解决办法，详见[AAI-INST1](#aai-inst1的resource问题)
+    * 增加ONAP系统中各VM的状态异常排查方法(更新中)，详见[ONAP系统中各VM的排查方法](onap_troubleshooting.md)
+
+  * 2017-9-12
+
+    * 添加policy VM的错误异常排查及解决办法[ONAP系统中各VM的排查方法](onap_troubleshooting.md)
+
   * 2017-9-6
 
     * 添加[基于VIO部署ONAP的技巧](onap_based_on_vio.md)(主要是为了应对vio环境的不稳定性)
@@ -369,4 +378,55 @@
   # 重启容器
   $ cd /opt
   $ sudo ./robot_install.sh
+  ```
+
+### aai-inst1的resource问题
+
+  问题现象：
+
+    aai-inst1中的testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败，进而导致与之关联的testconfig_aai-traversal.api.simpledemo.openecomp.org_1容器和testconfig_aaiapi.simpledemo.openecomp.org_1容器启动失败。
+
+  问题的根源：
+
+    aai-resources需要访问aai-inst2 VM中的aai-hbase的资源，而且是通过aai.hbase.simpledemo.openecomp.org域名的方式进行访问。因此，域名解析失败导致testconfig_aai-resources.api.simpledemo.openecomp.org_1容器启动失败。
+
+  解决办法：
+
+    第一步：判断aai-inst1和aai-inst2中是否可正常解析域名。
+    第二步：若不能解析域名，则查看dns-serverVM状态。
+
+  参考链接：
+
+    [https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm](https://wiki.onap.org/questions/15993417/deployvm1.sh-fails-in-aai-vm)
+
+  需要的注意的是，如果dns-server VM能够正常提供域名解析服务，则在整个ONAP系统中的VM的均可ping通相关的域名。详见[ONAP系统中各VM的排查方法](onap_troubleshooting.md)
+
+  ```
+  # 进入aai-inst1 vm进行域名解析的判断
+  $ ping aai.hbase.simpledemo.openecomp.org
+
+  # 进入aai-inst2 vm进行域名解析的判断
+  $ ping aai.hbase.simpledemo.openecomp.org
+
+  # 提示：域名均匀各个vm的私网ip绑定在一起，而不是floatingip。
+
+  # dns-server的判断及配置修改
+  # dns-server中域名服务绑定在服务bind9中，其配置文件为/etc/bind/zones/db.simpledemo.openecomp.org
+  # 指令 grep named /var/log/syslog | grep dns_master_load可检查配置文件是否错误
+
+  $ grep named /var/log/syslog | grep dns_master_load
+  /etc/bind/zones/db.simpledemo.openecomp.org:122: unexpected end of input
+  Sep 12 22:57:27 vm1-dns-server named[7760]: dns_master_load: /etc/bind/zones/db.simpledemo.openecomp.org:123: unexpected end of line
+  Sep 12 22:57:27 vm1-dns-server named[7760]: dns_master_load:
+
+  # Chang
+  CLAMP
+  clamp.api.simpledemo.openecomp.org.     IN      CNAME   vm1.clamp.simpledemo.openecomp.org.
+
+  # To
+  ;CLAMP
+  clamp.api.simpledemo.openecomp.org.     IN      CNAME   vm1.clamp.simpledemo.openecomp.org.
+
+  # 重启dns服务
+  $ service bind9 restart
   ```
