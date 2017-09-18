@@ -11,7 +11,11 @@
 
 ## 更新日志
 
-  * 2017=9-15
+  * 2017-9-18
+
+    * vid healthCheck失败及解决办法，详见[https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#](https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#)
+
+  * 2017-9-15
 
     * AAI VM的错误排查及解决办法，详见[AAI-INST1](#aai-inst1的resource问题)
     * 增加ONAP系统中各VM的状态异常排查方法(更新中)，详见[ONAP系统中各VM的排查方法](onap_troubleshooting.md)
