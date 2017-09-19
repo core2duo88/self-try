@@ -252,6 +252,7 @@ Content
   在robot vm中进行demo init和healthCheck均会出现Test Statisitics Failure，其错误原因由keystone url引起。需要将heat template和robot vm中/opt/config/keystone.txt的http://10.154.2.225:5000/v3替换成http://10.154.2.225:5000。
 
   具体做法如下：
+  ```
   # 进入robot vm，并修改/opt/config/keystone.txt文件
   $ ssh ubuntu@10.154.9.78
   $ cd /opt/config/
