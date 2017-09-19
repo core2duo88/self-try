@@ -5,6 +5,7 @@ Content
   * [sdc服务不可用](#sdc服务不可用)
   * [robot中的ssl问题](#robot中的ssl问题)
   * [aai-inst1的resource问题](#aai-inst1的resource问题)
+  * [demo init failure in robot](#demo_init_failure)
 
 ### sdc服务不可用
 
@@ -244,4 +245,23 @@ Content
 
   # 重启dns服务
   $ service bind9 restart
+  ```
+
+### demo_init_failure
+
+  在robot vm中进行demo init和healthCheck均会出现Test Statisitics Failure，其错误原因由keystone url引起。需要将heat template和robot vm中/opt/config/keystone.txt的http://10.154.2.225:5000/v3替换成http://10.154.2.225:5000。
+
+  具体做法如下：
+  # 进入robot vm，并修改/opt/config/keystone.txt文件
+  $ ssh ubuntu@10.154.9.78
+  $ cd /opt/config/
+  $ sudo cp keystone.txt keystone.txt.break
+  # Change http://10.154.2.225:5000/v3 To http://10.154.2.225:5000
+
+  # 删除robot中CONTAINER及相应的配置信息，并重启CONTAINER
+  $ sudo docker rm $(sudo docker ps -a -q) --force
+  $ cd /opt
+  $ sudo rm -rf eteshare/ docker/ testsuite/
+  $ sudo rm demo.sh ete.sh robot_vm_init.sh
+  $ sudo ./robot_install.sh
   ```

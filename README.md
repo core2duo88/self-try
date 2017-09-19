@@ -14,6 +14,8 @@
 
     * vid healthCheck失败及解决办法，详见[https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#](https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#)
 
+    * 增加robot中demo init failure的解决办法，详情见[TroubleShooting](troubleshooting_guide.md#demo_init_failure)
+
   * 2017-9-15
 
     * AAI VM的错误排查及解决办法，详见[AAI-INST1](#aai-inst1的resource问题)
