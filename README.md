@@ -29,7 +29,7 @@
 
   * 2017-9-5
 
-    * 更新robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
+    * 更新robot中container的ssl问题，详情见[TroubleShooting](troubleshooting_guide.md)
 
       + 主要文件
 
@@ -38,7 +38,7 @@
 
   * 2017-9-1
 
-    * 解决robot中container的ssl问题，详情见[robot中的ssl问题](#robot中的ssl问题)
+    * 解决robot中container的ssl问题，详情见[TroubleShooting](troubleshooting_guide.md)
 
         + 主要文件
 
@@ -48,7 +48,7 @@
 
   * 2017-8-29
 
-    + 排查SDC中BE启动失败问题，详情如下[SDC服务不可用](#sdc服务不可用)
+    + 排查SDC中BE启动失败问题，详情如下[TroubleShooting](troubleshooting_guide.md)
 
   * 2017-8-25
 
