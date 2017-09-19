@@ -6,15 +6,13 @@
   + [ONAP配置](#onap配置)
   + [ONAP环境信息](#onap环境信息)
   + [ENV文件](#env文件)
-  + [TroubleShooting](#troubleshooting_guide.md)
+  + [TroubleShooting](troubleshooting_guide.md)
 
 ## 更新日志
 
   * 2017-9-18
 
     * vid healthCheck失败及解决办法，详见[https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#](https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#)
-
-    * 增加robot vm中healthCheck statistics failure解决办法，详见
 
   * 2017-9-15
 
