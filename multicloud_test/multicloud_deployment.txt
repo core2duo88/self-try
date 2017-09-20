@@ -1,0 +1,30 @@
+OOM  部署multicloud 测试环境
+1 参考社区搭建需要的环境和平台:https://wiki.onap.org/display/DW/ONAP+on+Kubernetes
+2 rancher和kubernets环境准备好后, 下载oom项目
+3 使用脚本按顺序部署msb,aai,multicloud服务,
+  cd  oom/kubernetes/oneclick
+  ./createAll.bash -n onap -a <application>
+
+
+遇到的问题：
+1 multicloud服务无法注册到msb
+  解决: 需要部署kube2msb服务,  ./createAll.bash -n onap -a kube2msb
+        再部署其他服务才能注册到msb
+2 msb 服务不能转发请求给multicloud或aai
+  解决: 修改apigateway镜像
+        cd oom/kubernetes/msb
+        vim values.yaml把apigeway镜像改成apigateway: nexus3.onap.org:10001/onap/msb/msb_apigateway:latest
+        删除msb服务重新部署:cd ../oneclick && ./deleteAll.bash -n onap -a msb && ./createAll.bash -n onap -a msb
+
+3 aai 容器创建失败
+  解决: 发现agent节点的/dockerdata-nfs/onap/aai/目录里全部变成目录文件，从另外一个agent拷贝aai的文件
+  覆盖当前agent下的aai文件。
+  删除重新部署aai服务 ./deleteAll.bash -n onap -a aai && ./createAll.bash -n onap -a aai
+
+
+ 4 修改multicloud服务config配置里的MSB_ADDR和MSB_PORT地址
+   由于目前msb的apigateway服务没有域名且容器启动后IP不固定。
+   等apigateway容器部署后有cluster的IP地址和端口(默认80)，使用这IP和端口。
+   kubectl  get svc --all-namespaces 显示所有cluter-ip和port，找到msb-iag使用 
+   它的IP和PORT替换broker 和vio配置文件里的msb。
+   重启broker和vio服务。
