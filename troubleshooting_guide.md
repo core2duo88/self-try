@@ -249,7 +249,22 @@ Content
 
 ### demo_init_failure
 
+  错误现象：
+
+  在robot vm中进行/opt/demo.sh init时出错，如下所示：
+
+  ![robot_demo_init_failure_with_keystone](Image/demo_failure_with_keystone.png)
+
+  Logs
+
+    + [demo_init_failure](InitDemo_failure/log.html)  
+    + [demo_init_ok](InitDemo_ok/log.html)
+
+  错误原因：
+
   在robot vm中进行demo init和healthCheck均会出现Test Statisitics Failure，其错误原因由keystone url引起。需要将heat template和robot vm中/opt/config/keystone.txt的http://10.154.2.225:5000/v3替换成http://10.154.2.225:5000。
+
+  解决办法：
 
   具体做法如下：
   ```

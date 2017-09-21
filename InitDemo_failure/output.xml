@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170921 04:19:08.265" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/var/opt/OpenECOMP_ETE" id="s1" name="OpenECOMP ETE">
+<suite source="/var/opt/OpenECOMP_ETE/robot" id="s1-s1" name="Robot">
+<suite source="/var/opt/OpenECOMP_ETE/robot/testsuites" id="s1-s1-s1" name="Testsuites">
+<suite source="/var/opt/OpenECOMP_ETE/robot/testsuites/demo.robot" id="s1-s1-s1-s1" name="Demo">
+<test id="s1-s1-s1-s1-t1" name="Initialize Customer And Models">
+<kw name="Load Customer And Models" library="demo_preload">
+<doc>Use openECOMP to Orchestrate a service.</doc>
+<arguments>
+<arg>Demonstration</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.574" level="TRACE">Arguments: [ ${customer_name}='Demonstration' ]</msg>
+<kw name="Load Customer" library="demo_preload">
+<doc>Use openECOMP to Orchestrate a service.</doc>
+<arguments>
+<arg>${customer_name}</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.575" level="TRACE">Arguments: [ ${customer_name}='Demonstration' ]</msg>
+<kw name="Setup Orchestrate VNF" library="vnf_orchestration_test_template">
+<doc>Called before each test case to ensure tenant and region data</doc>
+<arguments>
+<arg>${GLOBAL_AAI_CLOUD_OWNER}</arg>
+<arg>SharedNode</arg>
+<arg>OwnerType</arg>
+<arg>v1</arg>
+<arg>CloudZone</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.575" level="TRACE">Arguments: [ ${cloud_owner}='Rackspace' | ${cloud_type}='SharedNode' | ${owner_defined_type}='OwnerType' | ${cloud_region_version}='v1' | ${cloud_zone}='CloudZone' ]</msg>
+<kw name="Initialize Tenant From Openstack" library="vnf_orchestration_test_template">
+<doc>Initialize the tenant test variables</doc>
+<msg timestamp="20170921 04:19:13.576" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run Openstack Auth Request" library="keystone_interface">
+<doc>Runs an Openstack Auth Request and returns the token and service catalog. you need to include the token in future request's x-auth-token headers. Service catalog describes what can be called</doc>
+<arguments>
+<arg>auth</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.577" level="TRACE">Arguments: [ ${alias}='auth' | ${username}='' | ${password}='' ]</msg>
+<kw name="Set Openstack Credentials" library="keystone_interface">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+<var>${password}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.578" level="TRACE">Arguments: [ ${username}='' | ${password}='' ]</msg>
+<kw name="Return From Keyword If" library="BuiltIn">
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<arguments>
+<arg>'${username}' != ''</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.579" level="TRACE">Arguments: [ "'' != ''" | '${username}' | '${password}' ]</msg>
+<msg timestamp="20170921 04:19:13.579" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170921 04:19:13.579" starttime="20170921 04:19:13.579"></status>
+</kw>
+<kw name="Get Openstack Credentials" library="keystone_interface">
+<assign>
+<var>${user}</var>
+<var>${pass}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.580" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20170921 04:19:13.580" level="TRACE">Return: [b'admin', b'vmware']</msg>
+<msg timestamp="20170921 04:19:13.580" level="INFO">${user} = admin</msg>
+<msg timestamp="20170921 04:19:13.581" level="INFO">${pass} = vmware</msg>
+<status status="PASS" endtime="20170921 04:19:13.581" starttime="20170921 04:19:13.580"></status>
+</kw>
+<msg timestamp="20170921 04:19:13.581" level="TRACE">Return: [b'admin', b'vmware']</msg>
+<msg timestamp="20170921 04:19:13.581" level="INFO">${username} = admin</msg>
+<msg timestamp="20170921 04:19:13.581" level="INFO">${password} = vmware</msg>
+<status status="PASS" endtime="20170921 04:19:13.581" starttime="20170921 04:19:13.578"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>keystone</arg>
+<arg>${GLOBAL_INJECTED_KEYSTONE}</arg>
+<arg>verify=True</arg>
+</arguments>
+<assign>
+<var>${session}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.582" level="TRACE">Arguments: [ 'keystone' | b'http://10.154.2.225:5000/v3' | verify='True' ]</msg>
+<msg timestamp="20170921 04:19:13.582" level="INFO">Creating Session using : alias=keystone, url=http://10.154.2.225:5000/v3, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg timestamp="20170921 04:19:13.582" level="DEBUG">Creating session: keystone</msg>
+<msg timestamp="20170921 04:19:13.583" level="DEBUG">Argument types are:
+&lt;type 'int'&gt;</msg>
+<msg timestamp="20170921 04:19:13.583" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20170921 04:19:13.583" level="TRACE">Return: &lt;requests.sessions.Session object at 0x7f33d93cec10&gt;</msg>
+<msg timestamp="20170921 04:19:13.584" level="INFO">${session} = &lt;requests.sessions.Session object at 0x7f33d93cec10&gt;</msg>
+<status status="PASS" endtime="20170921 04:19:13.584" starttime="20170921 04:19:13.582"></status>
+</kw>
+<kw name="Generate UUID" library="UUID">
+<doc>generate a uuid</doc>
+<assign>
+<var>${uuid}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.584" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20170921 04:19:13.584" level="TRACE">Return: UUID('84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0')</msg>
+<msg timestamp="20170921 04:19:13.585" level="INFO">${uuid} = 84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0</msg>
+<status status="PASS" endtime="20170921 04:19:13.585" starttime="20170921 04:19:13.584"></status>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${OPENSTACK_KEYSTONE_AUTH_BODY_FILE}</arg>
+</arguments>
+<assign>
+<var>${data_template}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.585" level="TRACE">Arguments: [ 'robot/assets/templates/keystone_get_auth.template' ]</msg>
+<msg timestamp="20170921 04:19:13.586" html="yes" level="INFO">Getting file '&lt;a href="file:///var/opt/OpenECOMP_ETE/robot/assets/templates/keystone_get_auth.template"&gt;/var/opt/OpenECOMP_ETE/robot/assets/templates/keystone_get_auth.template&lt;/a&gt;'.</msg>
+<msg timestamp="20170921 04:19:13.596" level="TRACE">Return: '{\n  "auth": {\n    "tenantId" : "${tenantId}",\n    "passwordCredentials": {\n      "username": "${username}",\n      "password": "${password}"\n    }\n  }\n}\n'</msg>
+<msg timestamp="20170921 04:19:13.596" level="INFO">${data_template} = {
+  "auth": {
+    "tenantId" : "${tenantId}",
+    "passwordCredentials": {
+      "username": "${username}",
+      "password": "${password}"
+    }
+  }
+}
+</msg>
+<status status="PASS" endtime="20170921 04:19:13.596" starttime="20170921 04:19:13.585"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>tenantId=${GLOBAL_INJECTED_OPENSTACK_TENANT_ID}</arg>
+</arguments>
+<assign>
+<var>${arguments}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.597" level="TRACE">Arguments: [ 'username=${username}' | 'password=${password}' | 'tenantId=${GLOBAL_INJECTED_OPENSTACK_TENANT_ID}' ]</msg>
+<msg timestamp="20170921 04:19:13.598" level="TRACE">Return: {'password': b'vmware', 'tenantId': b'3893355a611d4a1b9b719740b59015b9', 'username': b'admin'}</msg>
+<msg timestamp="20170921 04:19:13.598" level="INFO">${arguments} = {u'username': 'admin', u'password': 'vmware', u'tenantId': '3893355a611d4a1b9b719740b59015b9'}</msg>
+<status status="PASS" endtime="20170921 04:19:13.598" starttime="20170921 04:19:13.596"></status>
+</kw>
+<kw name="Fill JSON Template" library="json_templater">
+<doc>Runs substitution on template to return a filled in json</doc>
+<arguments>
+<arg>${data_template}</arg>
+<arg>${arguments}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.599" level="TRACE">Arguments: [ ${json}='{\n  "auth": {\n    "tenantId" : "${tenantId}",\n    "passwordCredentials": {\n      "username": "${username}",\n      "password": "${password}"\n    }\n  }\n}\n' | ${arguments}={'password': b'vmware', 'tenantId': b'3893355a611d4a1b9b719740b59015b9', 'username': b'admin'} ]</msg>
+<kw name="Template String" library="StringTemplater">
+<doc>Template String takes in a string and its values and converts it using the string.Template class</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>${arguments}</arg>
+</arguments>
+<assign>
+<var>${returned_string}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.600" level="TRACE">Arguments: [ '{\n  "auth": {\n    "tenantId" : "${tenantId}",\n    "passwordCredentials": {\n      "username": "${username}",\n      "password": "${password}"\n    }\n  }\n}\n' | {'password': b'vmware', 'tenantId': b'3893355a611d4a1b9b719740b59015b9', 'username': b'admin'} ]</msg>
+<msg timestamp="20170921 04:19:13.600" level="TRACE">Return: '{\n  "auth": {\n    "tenantId" : "3893355a611d4a1b9b719740b59015b9",\n    "passwordCredentials": {\n      "username": "admin",\n      "password": "vmware"\n    }\n  }\n}\n'</msg>
+<msg timestamp="20170921 04:19:13.600" level="INFO">${returned_string} = {
+  "auth": {
+    "tenantId" : "3893355a611d4a1b9b719740b59015b9",
+    "passwordCredentials": {
+      "username": "admin",
+      "password": "vmware"
+    }
+  }
+}
+</msg>
+<status status="PASS" endtime="20170921 04:19:13.600" starttime="20170921 04:19:13.600"></status>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${returned_string}</arg>
+</arguments>
+<assign>
+<var>${returned_json}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.601" level="TRACE">Arguments: [ '{\n  "auth": {\n    "tenantId" : "3893355a611d4a1b9b719740b59015b9",\n    "passwordCredentials": {\n      "username": "admin",\n      "password": "vmware"\n    }\n  }\n}\n' ]</msg>
+<msg timestamp="20170921 04:19:13.601" level="INFO">To JSON using : content={
+  "auth": {
+    "tenantId" : "3893355a611d4a1b9b719740b59015b9",
+    "passwordCredentials": {
+      "username": "admin",
+      "password": "vmware"
+    }
+  }
+}
+ </msg>
+<msg timestamp="20170921 04:19:13.601" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20170921 04:19:13.601" level="TRACE">Return: {'auth': {'passwordCredentials': {'password': 'vmware', 'username': 'admin'}, 'tenantId': '3893355a611d4a1b9b719740b59015b9'}}</msg>
+<msg timestamp="20170921 04:19:13.602" level="INFO">${returned_json} = {u'auth': {u'passwordCredentials': {u'username': u'admin', u'password': u'vmware'}, u'tenantId': u'3893355a611d4a1b9b719740b59015b9'}}</msg>
+<status status="PASS" endtime="20170921 04:19:13.602" starttime="20170921 04:19:13.601"></status>
+</kw>
+<msg timestamp="20170921 04:19:13.602" level="TRACE">Return: {'auth': {'passwordCredentials': {'password': 'vmware', 'username': 'admin'}, 'tenantId': '3893355a611d4a1b9b719740b59015b9'}}</msg>
+<msg timestamp="20170921 04:19:13.602" level="INFO">${data} = {u'auth': {u'passwordCredentials': {u'username': u'admin', u'password': u'vmware'}, u'tenantId': u'3893355a611d4a1b9b719740b59015b9'}}</msg>
+<status status="PASS" endtime="20170921 04:19:13.602" starttime="20170921 04:19:13.598"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${OPENSTACK_KEYSTONE_API_VERSION}${OPENSTACK_KEYSTONE_AUTH_PATH}</arg>
+</arguments>
+<assign>
+<var>${data_path}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.603" level="TRACE">Arguments: [ '/v2.0/tokens' ]</msg>
+<msg timestamp="20170921 04:19:13.604" level="TRACE">Return: '/v2.0/tokens'</msg>
+<msg timestamp="20170921 04:19:13.604" level="INFO">${data_path} = /v2.0/tokens</msg>
+<status status="PASS" endtime="20170921 04:19:13.604" starttime="20170921 04:19:13.603"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>X-TransactionId=${GLOBAL_APPLICATION_ID}-${uuid}</arg>
+<arg>X-FromAppId=${GLOBAL_APPLICATION_ID}</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.604" level="TRACE">Arguments: [ 'Accept=application/json' | 'Content-Type=application/json' | 'X-TransactionId=${GLOBAL_APPLICATION_ID}-${uuid}' | 'X-FromAppId=${GLOBAL_APPLICATION_ID}' ]</msg>
+<msg timestamp="20170921 04:19:13.605" level="TRACE">Return: {'Accept': 'application/json', 'Content-Type': 'application/json', 'X-FromAppId': 'robot-ete', 'X-TransactionId': 'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0'}</msg>
+<msg timestamp="20170921 04:19:13.605" level="INFO">${headers} = {u'Accept': u'application/json', u'Content-Type': u'application/json', u'X-TransactionId': u'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0', u'X-FromAppId': u'robot-ete'}</msg>
+<status status="PASS" endtime="20170921 04:19:13.605" starttime="20170921 04:19:13.604"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Sending authenticate post request ${data_path} with headers ${headers} and data ${data}</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.606" level="TRACE">Arguments: [ "Sending authenticate post request /v2.0/tokens with headers {u'Accept': u'application/json', u'Content-Type': u'application/json', u'X-TransactionId': u'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0', u'X-FromAppId': u'robot-ete'} and data {u'auth': {u'passwordCredentials': {u'username': u'admin', u'password': u'vmware'}, u'tenantId': u'3893355a611d4a1b9b719740b59015b9'}}" ]</msg>
+<msg timestamp="20170921 04:19:13.606" level="INFO">Sending authenticate post request /v2.0/tokens with headers {u'Accept': u'application/json', u'Content-Type': u'application/json', u'X-TransactionId': u'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0', u'X-FromAppId': u'robot-ete'} and data {u'auth': {u'passwordCredentials': {u'username': u'admin', u'password': u'vmware'}, u'tenantId': u'3893355a611d4a1b9b719740b59015b9'}}</msg>
+<msg timestamp="20170921 04:19:13.606" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170921 04:19:13.606" starttime="20170921 04:19:13.606"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>keystone</arg>
+<arg>${data_path}</arg>
+<arg>data=${data}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20170921 04:19:13.607" level="TRACE">Arguments: [ 'keystone' | '/v2.0/tokens' | data={'auth': {'passwordCredentials': {'password': 'vmware', 'username': 'admin'}, 'tenantId': '3893355a611d4a1b9b719740b59015b9'}} | headers={'Accept': 'application/json', 'Content-Type': 'application/json', 'X-FromAppId': 'robot-ete', 'X-TransactionId': 'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0'} ]</msg>
+<msg timestamp="20170921 04:19:13.617" level="DEBUG">Starting new HTTP connection (1): 10.154.2.225</msg>
+<msg timestamp="20170921 04:19:13.625" level="DEBUG">http://10.154.2.225:5000 "POST /v3/v2.0/tokens HTTP/1.1" 404 93</msg>
+<msg timestamp="20170921 04:19:13.626" level="DEBUG">post response: {"error": {"message": "The resource could not be found.", "code": 404, "title": "Not Found"}}</msg>
+<msg timestamp="20170921 04:19:13.626" level="INFO">Post Request using : alias=keystone, uri=/v2.0/tokens, data={"auth": {"passwordCredentials": {"username": "admin", "password": "vmware"}, "tenantId": "3893355a611d4a1b9b719740b59015b9"}},                     headers={u'Accept': u'application/json', u'Content-Type': u'application/json', u'X-TransactionId': u'robot-ete-84d3fe1c-1fda-4b84-a410-1d5e07c6d6f0', u'X-FromAppId': u'robot-ete'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20170921 04:19:13.626" level="TRACE">Return: &lt;Response [404]&gt;</msg>
+<msg timestamp="20170921 04:19:13.626" level="INFO">${resp} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20170921 04:19:13.626" starttime="20170921 04:19:13.607"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>200 &lt;= ${resp.status_code} &lt; 300</arg>
+</arguments>
+<msg timestamp="20170921 04:19:13.627" level="TRACE">Arguments: [ '200 &lt;= 404 &lt; 300' ]</msg>
+<msg timestamp="20170921 04:19:13.627" level="FAIL">'200 &lt;= 404 &lt; 300' should be true.</msg>
+<msg timestamp="20170921 04:19:13.628" level="DEBUG">Traceback (most recent call last):
+  None</msg>
+<status status="FAIL" endtime="20170921 04:19:13.628" starttime="20170921 04:19:13.627"></status>
+</kw>
+<status status="FAIL" endtime="20170921 04:19:13.628" starttime="20170921 04:19:13.577"></status>
+</kw>
+<status status="FAIL" endtime="20170921 04:19:13.628" starttime="20170921 04:19:13.576"></status>
+</kw>
+<status status="FAIL" endtime="20170921 04:19:13.628" starttime="20170921 04:19:13.575"></status>
+</kw>
+<status status="FAIL" endtime="20170921 04:19:13.629" starttime="20170921 04:19:13.574"></status>
+</kw>
+<status status="FAIL" endtime="20170921 04:19:13.629" starttime="20170921 04:19:13.573"></status>
+</kw>
+<tags>
+<tag>InitDemo</tag>
+</tags>
+<status status="FAIL" endtime="20170921 04:19:13.629" critical="yes" starttime="20170921 04:19:13.572">'200 &lt;= 404 &lt; 300' should be true.</status>
+</test>
+<doc>Executes the VNF Orchestration Test cases including setup and teardown
+</doc>
+<status status="FAIL" endtime="20170921 04:19:13.631" starttime="20170921 04:19:08.370"></status>
+</suite>
+<status status="FAIL" endtime="20170921 04:19:13.634" starttime="20170921 04:19:08.367"></status>
+</suite>
+<status status="FAIL" endtime="20170921 04:19:13.636" starttime="20170921 04:19:08.364"></status>
+</suite>
+<status status="FAIL" endtime="20170921 04:19:13.637" starttime="20170921 04:19:08.278"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">InitDemo</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="OpenECOMP ETE" pass="0">OpenECOMP ETE</stat>
+<stat fail="1" id="s1-s1" name="Robot" pass="0">OpenECOMP ETE.Robot</stat>
+<stat fail="1" id="s1-s1-s1" name="Testsuites" pass="0">OpenECOMP ETE.Robot.Testsuites</stat>
+<stat fail="1" id="s1-s1-s1-s1" name="Demo" pass="0">OpenECOMP ETE.Robot.Testsuites.Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
