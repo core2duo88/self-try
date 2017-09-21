@@ -10,6 +10,10 @@
 
 ## 更新日志
 
+  * 2017-9-20
+
+    * 增加portal中vid获取service data失败的解决办法，详情见[TroubleShooting](troubleshooting_guide.md#vid_failed_to_fetch_service_instance_data_form_aai_response_code_404)
+
   * 2017-9-18
 
     * vid healthCheck失败及解决办法，详见[https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#](https://wiki.onap.org/questions/15996123/vid-throws-error-javax.servlet.servletexception-init-failed-to-find-or-instantiate-class-org.openecomp.portalsdk.core.onboarding.client.onboardingapiserviceimpl#)
