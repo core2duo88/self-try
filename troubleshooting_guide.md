@@ -335,3 +335,7 @@ Content
   # vid脚本位置/opt/vid_install.sh
   $ sudo ./vid_install.sh
   ```
+
+  正常页面如下所示
+
+  ![vid_fetch_service_data_ok](Image/vid_searchservice_ok.PNG)
