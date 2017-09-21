@@ -257,7 +257,7 @@ Content
 
   Logs
 
-    + [demo_init_failure](InitDemo_failure/log.html)  
+    + [demo_init_failure](InitDemo_failure/log.html)
     + [demo_init_ok](InitDemo_ok/log.html)
 
   错误原因：
