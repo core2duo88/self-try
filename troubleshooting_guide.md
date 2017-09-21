@@ -289,49 +289,49 @@ Content
 
   错误现象：
 
-    在vid portal界面中，deploy service后，无法获取service data。如下所示：
+  在vid portal界面中，deploy service后，无法获取service data。如下所示：
 
-    ![vid_deployed_ok](Image/created_ok.PNG)
+  ![vid_deployed_ok](Image/created_ok.PNG)
 
-    ![vid_fetch_service_data_failure](Image/vid_searchservice_failure.PNG)
+  ![vid_fetch_service_data_failure](Image/vid_searchservice_failure.PNG)
 
   错误原因：
 
-    service deployed成功后，service data已经写入vid vm中的vid-mariadb CONTAINER中。在进行service data检索的时候，要经过aai的中某些CONTAINER，因此要确保aai-inst1 vm和aai-inst2 vm中的CONTAINER工作正常，同时确保vid vm中的vid-server和vid-mariadb工作正常。
+  service deployed成功后，service data已经写入vid vm中的vid-mariadb CONTAINER中。在进行service data检索的时候，要经过aai的中某些CONTAINER，因此要确保aai-inst1 vm和aai-inst2 vm中的CONTAINER工作正常，同时确保vid vm中的vid-server和vid-mariadb工作正常。
 
   排查方法：
 
-    ```
-    # 检查aai-inst1和aai-inst2中各CONTAINER logs,正常情况下logs如下所示(以testconfig_datarouter_1为例)：
-    $ ssh ubuntu@10.154.9.87
-    $ sudo docker logs -f testconfig_datarouter_1
-    ```
+  ```
+  # 检查aai-inst1和aai-inst2中各CONTAINER logs,正常情况下logs如下所示(以testconfig_datarouter_1为例)：
+  $ ssh ubuntu@10.154.9.87
+  $ sudo docker logs -f testconfig_datarouter_1
+  ```
 
-    ![testconfig_datarouter_1_ok_log](Image/aai_log_ok.PNG)
+  ![testconfig_datarouter_1_ok_log](Image/aai_log_ok.PNG)
 
-    ```
-    # 检查vid vm中vid-server和vid-mariadb的log，正常情况如下所示：
-    $ ssh ubuntu@10.154.9.76
-    $ sudo docker logs -f vid-server
-    $ sudo docker logs -f vid-mariadb
-    ```
+  ```
+  # 检查vid vm中vid-server和vid-mariadb的log，正常情况如下所示：
+  $ ssh ubuntu@10.154.9.76
+  $ sudo docker logs -f vid-server
+  $ sudo docker logs -f vid-mariadb
+  ```
 
-    vid-server log
+  vid-server log
 
-    ![vid-server_log_ok](Image/vid-server_log_ok.PNG)
+  ![vid-server_log_ok](Image/vid-server_log_ok.PNG)
 
-    ![vid-mariadb_log_ok](Image/vid-mariadb_log_ok.PNG)
+  ![vid-mariadb_log_ok](Image/vid-mariadb_log_ok.PNG)
 
-    如果以上CONTAINER log异常，则重启CONTAINER，甚至重启所有CONTAINER。
+  如果以上CONTAINER log异常，则重启CONTAINER，甚至重启所有CONTAINER。
 
-    ```
-    # 重启单个CONTAINER，可参考以下代码
-    $ sudo docker restart <CONTAINER_NAME>
+  ```
+  # 重启单个CONTAINER，可参考以下代码
+  $ sudo docker restart <CONTAINER_NAME>
 
-    # 重启所有CONTAINER，参考以下代码
-    $ sudo docker rm $(sudo docker ps -a -q) --force
-    # aai脚本位置/opt/aai_install.sh
-    $ sudo ./aai_install.sh
-    # vid脚本位置/opt/vid_install.sh
-    $ sudo ./vid_install.sh
-    ```
+  # 重启所有CONTAINER，参考以下代码
+  $ sudo docker rm $(sudo docker ps -a -q) --force
+  # aai脚本位置/opt/aai_install.sh
+  $ sudo ./aai_install.sh
+  # vid脚本位置/opt/vid_install.sh
+  $ sudo ./vid_install.sh
+  ```
