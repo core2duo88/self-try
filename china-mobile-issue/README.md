@@ -1,6 +1,6 @@
 ## 中国移动集成问题汇总
 
-####**一、华为**
+#### **一、华为**
 1. 创建volume失败，报错显示资源不足
 	- **问题描述**：VIO4.0 cinder bug，在创建volume的时候会check datastore的resource是否满足volume
 	的需求，但code实际上check的controller node的硬盘是否满足volume的需求。
