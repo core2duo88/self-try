@@ -79,6 +79,7 @@
 	```
 	
 	nova hypervisor-list 显示的结果
+	
 	![](Image/nova-hypervisor-list.png)
 
 #### **中兴**
