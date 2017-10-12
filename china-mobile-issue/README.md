@@ -49,37 +49,37 @@
 	```python
 	不进行filter，直接调用self.get("/resource_providers")得到的结果如下：
 	{
-    u'resource_providers': [
-        {
-            u'generation': 158,
-            u'links': [
-                {
-                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25',
-                    u'rel': u'self'
-                },
-                {
-                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/aggregates',
-                    u'rel': u'aggregates'
-                },
-                {
-                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/inventories',
-                    u'rel': u'inventories'
-                },
-                {
-                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/usages',
-                    u'rel': u'usages'
-                }
-            ],
-            u'uuid': u'577b8b94-08cb-41e2-8c08-1b0124626a25',
-            u'parent_provider_uuid': None,
-            u'name': u'domain-c31.7d9decd6-862d-4ae6-89d8-605d426429e4'
-        }
-    ]
-}
+	    u'resource_providers': [
+	        {
+	            u'generation': 158,
+	            u'links': [
+	                {
+	                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25',
+	                    u'rel': u'self'
+	                },
+	                {
+	                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/aggregates',
+	                    u'rel': u'aggregates'
+	                },
+	                {
+	                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/inventories',
+	                    u'rel': u'inventories'
+	                },
+	                {
+	                    u'href': u'/resource_providers/577b8b94-08cb-41e2-8c08-1b0124626a25/usages',
+	                    u'rel': u'usages'
+	                }
+	            ],
+	            u'uuid': u'577b8b94-08cb-41e2-8c08-1b0124626a25',
+	            u'parent_provider_uuid': None,
+	            u'name': u'domain-c31.7d9decd6-862d-4ae6-89d8-605d426429e4'
+	        }
+	    ]
+	}
 	```
 	
 	nova hypervisor-list 显示的结果
-	![nova-hypervisor-list](../Image/nova-hypervisor-list.png)
+	![nova-hypervisor-list](Image/nova-hypervisor-list.png)
 
 #### **中兴**
 1. vpn可以访问中兴vm的8080端口，通过移动的跳板机访问不了
