@@ -33,8 +33,8 @@
 		- Huawei\_SuSE\_V500R002C30SPC200\_sbc\_lbu
 		- Huawei\_SuSE\_V500R002C30SPC200\_sbc\_vpu
 4. 部署vUGW_OMU失败
-	- **问题描述：**：创建虚拟机是，nova-scheduler显示没有host可供使用。实际上是nova在get/resource\_providers接口进行filter时，返回结果为空。
-	- **解决方案：**修改文件/usr/lib/python2.7/dist-packages/nova/scheduler/client/report.py
+	- **问题描述:** 创建虚拟机时，nova-scheduler显示没有host可供使用。是因为nova在get/resource\_providers接口进行filter时，返回结果为空，filter逻辑有问题。
+	- **解决方案:** 修改文件/usr/lib/python2.7/dist-packages/nova/scheduler/client/report.py
 	
 	```python
     332 # Modify by damon-Damon
@@ -44,7 +44,7 @@
     336                 version='1.7')
 	```
 	
-	- **解决方案解释：**这种修改方案是不影响后续操作的。从修改代码可以看出我在进行获取resource\_providers的时候不进行filter。不进行filter获取的结果如下所示，可以看出只有一个resource\_provider，调用nova hypervisor-list显示的结果如下所示。可以看出resource\_provider就是hypervisor，对于vc来说就是compute2的cluster，所以对于单一cluster的VIO，进行fliter和不进行filter得到的结果是一样的。如果因为不进行filter，由于资源不够而最终创建虚机失败，nova这边也会接收到vc的error信息，也会抛出来，不影响后续操作，filter只是一个提前的检查而已。
+	- **解决方案解释:** 这种修改方案是不影响后续操作的。从修改代码可以看出我在进行获取resource\_providers的时候不进行filter。不进行filter获取的结果如下所示，可以看出只有一个resource\_provider，调用nova hypervisor-list显示的结果如下所示。可以看出resource\_provider就是hypervisor，对于vc来说就是compute2的cluster，所以对于单一cluster的VIO，进行fliter和不进行filter得到的结果是一样的。如果因为不进行filter，由于资源不够而最终创建虚机失败，nova这边也会接收到vc的error信息，也会抛出来，不影响后续操作，filter只是一个提前的检查而已。
 	
 	```python
 	不进行filter，直接调用self.get("/resource_providers")得到的结果如下：
