@@ -79,7 +79,7 @@
 	```
 	
 	nova hypervisor-list 显示的结果
-	![nova-hypervisor-list](Image/nova-hypervisor-list.png)
+	![](Image/nova-hypervisor-list.png)
 
 #### **中兴**
 1. vpn可以访问中兴vm的8080端口，通过移动的跳板机访问不了
