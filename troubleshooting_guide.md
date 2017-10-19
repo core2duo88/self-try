@@ -8,6 +8,7 @@ Content
   * [demo init failure in robot](#demo_init_failure)
   * [vid_fetch_service_data_failure](#vid_failed_to_fetch_service_instance_data_form_aai_response_code_404)
   * [dcae_docker_run_boot_container_failure](#dcae_boot_failure)
+  * [dcae2_install_failure](#dcae2_install_failure)
 
 ### sdc服务不可用
 
@@ -362,3 +363,15 @@ Content
   解决办法：在/opt/dcae2_install.sh脚本中`pip install jinja2`的上一行添加`export LC_ALL=C`即可。
 
   参考链接：[https://askubuntu.com/questions/790116/python-pip-install-xmltodict-fails](https://askubuntu.com/questions/790116/python-pip-install-xmltodict-fails)
+
+### dcae2_install_failure
+
+  问题描述：/opt/config目录下的文件名称与/opt/app/inputs-templates/inputs.yaml文件名称不符，导致dcae2_install.sh脚本运行失败。
+
+  解决办法：将/opt/config目录下的文件改成相应的名称。
+
+  ```
+  # 以tenant_name为例
+  # 操作目录/opt/config
+  $ cp tenant_id.txt tenant_name.txt
+  ```

@@ -10,6 +10,11 @@
 
 ## 更新日志
 
+  * 2017-10-18
+
+    * 增加dcae vm中pip安装版本不一致问题的解决办法，详见[TroubleShooting](troubleshooting_guide.md#dcae_boot_failure)
+    * dace2_install中的文件名称不匹配问题，详见[TroubleShooting](troubleshooting_guide.md#dcae2_install_failure)
+
   * 2017-9-20
 
     * 增加portal中vid获取service data失败的解决办法，详情见[TroubleShooting](troubleshooting_guide.md#vid_failed_to_fetch_service_instance_data_form_aai_response_code_404)
