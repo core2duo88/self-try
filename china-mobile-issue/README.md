@@ -99,6 +99,13 @@
 			neutron net-update <net-id>  --port_security_enabled=False
 			neutron port-update <port_id> --port_security_enabled=False
 			```
+2. VIO无法收集串口日志
+	- **解决方案：**
+		
+		针对vc中的所有ESXi host，分别进行firewall的配置，开启serial port端口。步骤如下：
+		1. 依次点击ESXi host->Configure->Security Profile->Edit
+		2. enable "VM serial port connected over network"和"VM serial port connected over vSPC"端口。
+		3. 点击ok保存
 
 #### **Glance 常用指令**
 
