@@ -1,0 +1,58 @@
+[console_scripts]
+neutron-api-replay = vmware_nsx.api_replay.cli:main
+neutron-check-nsx-config = vmware_nsx.check_nsx_config:main
+nsxadmin = vmware_nsx.shell.nsxadmin:main
+
+[firewall_drivers]
+vmware_nsxv3_edge = vmware_nsx.services.fwaas.nsx_v3.edge_fwaas_driver:EdgeFwaasV3Driver
+vmware_nsxv_edge = vmware_nsx.services.fwaas.nsx_v.edge_fwaas_driver:EdgeFwaasDriver
+
+[networking_sfc.flowclassifier.drivers]
+vmware-nsxv-sfc = vmware_nsx.services.flowclassifier.nsx_v.driver:NsxvFlowClassifierDriver
+
+[neutron.core_plugins]
+vmware = vmware_nsx.plugin:NsxMhPlugin
+
+[neutron.db.alembic_migrations]
+vmware-nsx = vmware_nsx.db.migration:alembic_migrations
+
+[neutron.ipam_drivers]
+vmware_nsxv3_ipam = vmware_nsx.services.ipam.nsx_v3.driver:Nsxv3IpamDriver
+vmware_nsxv_ipam = vmware_nsx.services.ipam.nsx_v.driver:NsxvIpamDriver
+
+[neutron.qos.notification_drivers]
+vmware_nsxv3_message_queue = vmware_nsx.services.qos.nsx_v3.message_queue:NsxV3QosNotificationDriver
+
+[neutron.service_plugins]
+vmware_nsxv_qos = vmware_nsx.services.qos.nsx_v.plugin:NsxVQosPlugin
+
+[openstack.cli.extension]
+nsxclient = vmware_nsx.osc.plugin
+
+[openstack.nsxclient.v2]
+port_create = vmware_nsx.osc.v2.port:NsxCreatePort
+port_set = vmware_nsx.osc.v2.port:NsxSetPort
+router_create = vmware_nsx.osc.v2.router:NsxCreateRouter
+router_set = vmware_nsx.osc.v2.router:NsxSetRouter
+security_group_create = vmware_nsx.osc.v2.security_group:NsxCreateSecurityGroup
+security_group_set = vmware_nsx.osc.v2.security_group:NsxSetSecurityGroup
+subnet_create = vmware_nsx.osc.v2.subnet:NsxCreateSubnet
+subnet_set = vmware_nsx.osc.v2.subnet:NsxSetSubnet
+
+[oslo.config.opts]
+nsx = vmware_nsx.opts:list_opts
+
+[tempest.test_plugins]
+vmware-nsx-tempest-plugin = vmware_nsx_tempest.plugin:VMwareNsxTempestPlugin
+
+[vmware_nsx.extension_drivers]
+vmware_nsxv3_dns = vmware_nsx.extension_drivers.dns_integration:DNSExtensionDriverNSXv3
+vmware_nsxv_dns = vmware_nsx.extension_drivers.dns_integration:DNSExtensionDriverNSXv
+
+[vmware_nsx.neutron.nsxv.router_type_drivers]
+distributed = vmware_nsx.plugins.nsx_v.drivers.distributed_router_driver:RouterDistributedDriver
+exclusive = vmware_nsx.plugins.nsx_v.drivers.exclusive_router_driver:RouterExclusiveDriver
+shared = vmware_nsx.plugins.nsx_v.drivers.shared_router_driver:RouterSharedDriver
+
+[neutron.ml2.mechanism_drivers]
+vds = vmware_nsx.plugins.vds_mech_driver:VDSMechDriver
