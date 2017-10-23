@@ -61,5 +61,5 @@ password: password
 chpasswd: { expire: False }
 ssh_pwauth: True
 ```
-![configuration](Image/configuration.png)
+![configuration](../Image/configuration.png)
 通过这段代码建立虚机之后可用密码password登录。目前测试均能通过
