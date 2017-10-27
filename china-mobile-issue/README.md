@@ -19,7 +19,7 @@
 	```python
 	977 # Add by damon-Damon
 	978 if adapter_type == 'scsi':
-   979  	adapter_type = constants.DEFAULT_ADAPTER_TYPE
+   979  	adapter_type = constants.ADAPTER_TYPE_LSILOGICSAS
 
    1037 # Modify by damon-Damon
         if (adapter_type is not None and adapter_type not in valid_bus and adapter_type != 'scsi'):
