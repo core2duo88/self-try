@@ -1,0 +1,22 @@
+{
+    "networks":[
+       {
+           "name":"VM Network",
+           "isDhcp":"false",
+           "portGroup":"VM Network",
+           "dns1": "10.111.0.1",
+           "gateway":"10.111.160.253",
+           "netmask":"255.255.255.0",
+           "ipBlocks": [{"beginIp":"10.111.160.33", "endIp":"10.111.160.50"}]
+        },
+        {
+           "name":"external",
+           "isDhcp":"false",
+           "portGroup":"external",
+           "dns1": "10.111.0.1",
+           "gateway":"10.111.161.253",
+           "netmask":"255.255.255.0",
+           "ipBlocks": [{"beginIp":"10.111.161.14", "endIp":"10.111.161.15"}]
+        }
+    ]
+}        

@@ -1,0 +1,153 @@
+{
+    "attributes": {
+        "deployment_type": "LARGE"
+    }, 
+    "name": "VIO", 
+    "networkConfig": {
+        "DATA_NETWORK": [
+            "VM Network"
+        ], 
+        "EXTERNAL_NETWORK": [
+            "vio-dvpg"
+        ], 
+        "METADATA_NETWORK": [
+            "VM Network"
+        ], 
+        "MGT_NETWORK": [
+            "VM Network"
+        ], 
+        "REPL_NETWORK": [
+            "VM Network"
+        ]
+    }, 
+    "networkings": [
+        {
+            "dns1": "192.168.112.1", 
+            "dnsList": [
+                "192.168.112.1"
+            ], 
+            "gateway": "192.168.112.1", 
+            "ipBlocks": [
+                {
+                    "beginIp": "192.168.112.161", 
+                    "endIp": "192.168.112.162"
+                }
+            ], 
+            "isDhcp": false, 
+            "name": "vio-dvpg", 
+            "netmask": "255.255.255.0", 
+            "portGroup": "vio-dvpg", 
+            "type": "static"
+        }, 
+        {
+            "dns1": "192.168.111.1", 
+            "dnsList": [
+                "192.168.111.1"
+            ], 
+            "gateway": "192.168.111.1", 
+            "ipBlocks": [
+                {
+                    "beginIp": "192.168.111.160", 
+                    "endIp": "192.168.111.182"
+                }
+            ], 
+            "isDhcp": false, 
+            "name": "VM Network", 
+            "netmask": "255.255.255.0", 
+            "portGroup": "VM Network", 
+            "type": "static"
+        }
+    ], 
+    "nodeGroups": [
+        {
+            "attributes": {
+                "public_hostname": "", 
+                "public_vip": "192.168.112.160"
+            }, 
+            "cpuNum": 2, 
+            "haFlag": "on", 
+            "instanceNum": 2, 
+            "memCapacityMB": 4096, 
+            "name": "LoadBalancer", 
+            "roles": [
+                "LoadBalancer"
+            ], 
+            "swapRatio": 1.0
+        }, 
+        {
+            "attributes": {
+                "admin_password": "******", 
+                "admin_user": "admin", 
+                "keystone_backend": "sql", 
+                "neutron_backend": "nsxv3", 
+                "nsxv3_api_managers": "192.168.111.17", 
+                "nsxv3_api_password": "******", 
+                "nsxv3_api_username": "admin", 
+                "nsxv3_default_overlay_tz": "4ecceadf-9e0e-493f-856b-bfbb4f7a7394", 
+                "nsxv3_default_tier0_router": "1e07b9e6-04cd-46cf-965a-11a296b82011", 
+                "nsxv3_default_vlan_tz": "245a13b8-6f43-4b1f-b5f4-843dc46b0a29", 
+                "nsxv3_md_shared_password": "******", 
+                "nsxv3_native_dhcp_profile": "9c913c1a-e9eb-49fa-b9a5-9b37891dcf29", 
+                "nsxv3_native_md_proxy": "d5a2cf0f-520d-480f-9654-c0542700d088", 
+                "vcenter_insecure": "false", 
+                "vcenter_ip": "vxlan-1-vm51.nimbus-tb.eng.vmware.com", 
+                "vcenter_password": "******", 
+                "vcenter_user": "administrator@vsphere.local"
+            }, 
+            "cpuNum": 8, 
+            "haFlag": "on", 
+            "instanceNum": 2, 
+            "memCapacityMB": 16384, 
+            "name": "Controller", 
+            "roles": [
+                "Controller", 
+                "MemoryCache", 
+                "ObjectStorage"
+            ], 
+            "swapRatio": 1.0
+        }, 
+        {
+            "cpuNum": 4, 
+            "haFlag": "on", 
+            "instanceNum": 3, 
+            "memCapacityMB": 16384, 
+            "name": "DB", 
+            "roles": [
+                "Database", 
+                "MessageQueue"
+            ], 
+            "swapRatio": 1.0
+        }, 
+        {
+            "attributes": {
+                "region_name": "nova"
+            }, 
+            "cpuNum": 2, 
+            "haFlag": "on", 
+            "instanceNum": 1, 
+            "memCapacityMB": 4096, 
+            "name": "Compute", 
+            "nodeAttributes": [
+                {
+                    "availability_zone_name": "nova", 
+                    "cluster_moid": "domain-c21", 
+                    "cluster_name": "compute_cluster", 
+                    "datastore_regex": "vdnetSharedStorage", 
+                    "is_management_vc": "true", 
+                    "vcenter_ip": "vxlan-1-vm51.nimbus-tb.eng.vmware.com"
+                }
+            ], 
+            "roles": [
+                "Compute"
+            ], 
+            "swapRatio": 1.0
+        }
+    ], 
+    "specFile": true, 
+    "vcClusters": [
+        {
+            "moid": "domain-c7", 
+            "name": "mgmt_cluster"
+        }
+    ]
+}

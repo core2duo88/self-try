@@ -1,0 +1,6 @@
+{
+    "nsxt_api_manager": "10.155.21.184",
+    "nsxt_password": "default",
+    "nsxt_user": "admin",
+    "type": "nsxt"
+}

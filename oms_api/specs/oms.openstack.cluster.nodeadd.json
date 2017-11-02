@@ -1,0 +1,23 @@
+[
+    {
+      "vcenter_ip":"10.154.8.15",
+      "cluster_name":"comput_cluster",
+      "datastore_regex": "datastore66",
+      "cluster_moid":"domain-c9",
+      "availability_zone_name" : "nova"
+    }
+]
+
+https://10.154.9.156:8443/oms/api/cluster/VIO/nodegroup/Compute/scaleout
+
+{"roles": [{"role_names": ["Compute"],"nodes": [{"attributes": {"hostname": "compute01","datastore_regex": "vdnetSharedStorage,datastore (4)"}}]}]}
+
+
+
+
+
+spec='{"vcenter_ip":"10.154.8.15","cluster_name":"comput_cluster","datastore_regex": "datastore66","cluster_moid":"domain-c29","is_management_vc":"true","availability_zone_name":"nova"}
+
+
+
+resp=`curl -H "Content-Type: application/json" -X POST -d '{"roles": [{"role_names": ["Compute"],"nodes": [{"attributes": {"hostname": "compute01","datastore_regex": "vdnetSharedStorage,datastore (4)"}}]}]}' http://127.0.0.1:9004/api/multicloud-vio/v0/oms/nova/`

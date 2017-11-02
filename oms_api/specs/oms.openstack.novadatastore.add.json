@@ -1,0 +1,17 @@
+{
+  "roles": [
+    {
+      "role_names": [
+        "Compute"
+      ],
+      "nodes": [
+        {
+          "attributes": {
+            "hostname": "compute01",
+            "datastore_regex": "datastore66"
+          }
+        }
+      ]
+    }
+  ]
+}
