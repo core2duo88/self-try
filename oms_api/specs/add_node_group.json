@@ -1,0 +1,16 @@
+{
+    "cpuNum": 2,
+    "haFlag": "on",
+    "instanceNum": 3,
+    "memCapacityMB": 4096,
+    "name": "MongoDB",
+    "roles": [
+        "MongoDB"
+    ],
+    "swapRatio": 1.0,
+    "attributes": {
+        "admin_user": "admin",
+        "admin_password": "admin",
+        "meter_interval": 120
+    }
+}

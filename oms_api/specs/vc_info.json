@@ -1,0 +1,7 @@
+{
+    "hostname": "vxlan-1-vm80.nimbus-tb.eng.vmware.com",
+    "username": "administrator@vsphere.local",
+    "password": "Admin!23",
+    "port":"443",
+    "thumbprint": "1d:e9:28:ec:50:6c:3c:a0:d7:34:7c:ae:3a:a2:51:1a:9d:6d:db:07"
+}

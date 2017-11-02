@@ -1,0 +1,10 @@
+{
+ "az-1":[
+     {
+         "cluster_moid": "domain-c17",
+         "cluster_name": "compute_cluster",
+         "datastore_regex": "vdnetSharedStorage",
+         "vcenter_ip":"vxlan-1-vm80.nimbus-tb.eng.vmware.com"
+     }
+ ]
+}

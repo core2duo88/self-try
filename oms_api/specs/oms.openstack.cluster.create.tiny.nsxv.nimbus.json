@@ -1,0 +1,146 @@
+{
+  "name": "VIO",
+  "nodeGroups": [
+    {
+      "name": "ControlPlane",
+      "roles": [
+        "LoadBalancer",
+        "Controller",
+        "MemoryCache",
+        "ObjectStorage",
+        "Database",
+        "MessageQueue",
+        "Compute"
+      ],
+      "instanceNum": 1,
+      "cpuNum": 8,
+      "memCapacityMB": 16384,
+      "swapRatio": 1.0,
+      "haFlag": "on",
+      "attributes": {
+        "vcenter_user": "Administrator@vsphere.local",
+        "token_expiration_time": "7200",
+        "ldap_tls_req_cert": "",
+        "nsxv_vdn_scope_moref": "vdnscope-1",
+        "ldap_certificate": "",
+        "vcenter_password": "Admin!23",
+        "nsxv_metadata_proxy_ips": "",
+        "vcenter_certificate": "",
+        "nsxv_dvs_moref": "dvs-33",
+        "nsxv_management_network_moref": "",
+        "region_name": "",
+        "public_hostname": "",
+        "management_default_gateway": "",
+        "nsxv_dvs_name": "vio-dvs",
+        "horizon_regions": "",
+        "internal_vip": "",
+        "cinder_folder": "Volumes",
+        "nsxv_resource_pool_moref": "",
+        "nsxv_metadata_network": "",
+        "nsxv_external_network_moref": "vio-dvpg",
+        "vcenter_insecure": "true",
+        "public_vip": "192.168.112.160",
+        "glance_datastores": "vio-datacenter:vdnetSharedStorage:100",
+        "admin_password": "vmware",
+        "nsxv_metadata_proxy_netmask": "",
+        "nsxv_datastore_moref": "",
+        "dhcp_domain": "",
+        "nsxv_edge_cluster_moref": "domain-c21",
+        "management_network": "",
+        "nsxv_cluster_moref": "",
+        "nsxv_insecure": "true",
+        "nsxv_username": "admin",
+        "neutron_backend": "nsxv",
+        "keystone_backend": "sql",
+        "nsxv_certificate": "",
+        "vcenter_ip": "vxlan-vm3.nimbus-tb.eng.vmware.com",
+        "nsxv_exclusive_router_appliance_size": "compact",
+        "ceilometer_enabled": "false",
+        "nsxv_metadata_default_gateway": "",
+        "glance_folder": "/images",
+        "nsxv_datacenter_moref": "",
+        "nsxv_manager": "192.168.111.134",
+        "admin_user": "admin",
+        "nsxv_edge_cluster_name": "edge_cluster",
+        "nsxv_edge_ha": "False",
+        "meter_interval": "",
+        "admin_tenant_name": "admin",
+        "nsxv_password": "default",
+        "region_name": "nova"
+      },
+      "nodeAttributes": [
+        {
+          "cluster_name": "compute_cluster",
+          "datastore_regex": "vdnetSharedStorage",
+          "cluster_moid": "domain-c25"
+        }
+      ]
+    }
+  ],
+  "vcClusters": [
+    {
+      "name": "mgmt_cluster",
+      "moid": "domain-c7"
+    }
+  ],
+  "networkConfig": {
+    "EXTERNAL_NETWORK": [
+      "vio-dvpg"
+    ],
+    "REPL_NETWORK": [
+      "VM Network"
+    ],
+    "METADATA_NETWORK": [
+      "VM Network"
+    ],
+    "MGT_NETWORK": [
+      "VM Network"
+    ],
+    "DATA_NETWORK": [
+      "VM Network"
+    ]
+  },
+  "networkings": [
+    {
+      "name": "vio-dvpg",
+      "portGroup": "vio-dvpg",
+      "isDhcp": false,
+      "type": "static",
+      "dns1": "192.168.112.1",
+      "ipBlocks": [
+        {
+          "beginIp": "192.168.112.160",
+          "endIp": "192.168.112.160"
+        }
+      ],
+      "gateway": "192.168.112.1",
+      "netmask": "255.255.255.0",
+      "dnsList": [
+        "192.168.112.1"
+      ]
+    },
+    {
+      "name": "VM Network",
+      "portGroup": "VM Network",
+      "isDhcp": false,
+      "type": "static",
+      "dns1": "192.168.111.1",
+      "ipBlocks": [
+        {
+          "beginIp": "192.168.111.160",
+          "endIp": "192.168.111.179"
+        }
+      ],
+      "gateway": "192.168.111.1",
+      "netmask": "255.255.255.0",
+      "dnsList": [
+        "192.168.111.1"
+      ]
+    }
+  ],
+  "specFile": true,
+  "attributes": {
+    "deployment_type": "TINY",
+    "plan": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "roles": [
+    {
+      "role_names": [
+        "Controller"
+      ],
+      "attributes": {
+        "glance_datastores":"vio-datacenter:vdnetSharedStorage:100,vio-datacenter:datastore:100"
+      }
+    }
+  ]
+}

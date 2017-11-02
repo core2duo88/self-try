@@ -1,0 +1,13 @@
+{
+    "roles": [
+        {
+            "attributes": {
+                "glance_replication_datastores": "null:Datastore:datastore-12",
+                "vcenter_glance_ip": "vxlan-1-vm52.nimbus-tb.eng.vmware.com"
+            },
+            "role_names": [
+                "Controller"
+            ]
+        }
+    ]
+}

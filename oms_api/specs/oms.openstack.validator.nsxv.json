@@ -1,0 +1,6 @@
+{
+    "nsxv_host": "10.155.21.184",
+    "nsxv_password": "default",
+    "nsxv_user": "admin",
+    "type": "nsxv"
+}

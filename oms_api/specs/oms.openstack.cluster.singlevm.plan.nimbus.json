@@ -1,0 +1,109 @@
+{
+  "name" : "VIO_X",
+  "nodeGroups" : [ {
+    "name" : "ControlPlane",
+    "roles" : [ "LoadBalancer", "Controller", "MemoryCache", "ObjectStorage", "Database", "MessageQueue", "DHCP" ],
+    "instanceNum" : 1,
+    "cpuNum" : 8,
+    "memCapacityMB" : 16384,
+    "swapRatio" : 1.0,
+    "haFlag" : "on",
+    "attributes" : {
+      "dvs_default_name" : "vio-dvs",
+      "vcenter_user" : "administrator@vsphere.local",
+      "token_expiration_time" : "7200",
+      "ldap_tls_req_cert" : "",
+      "ldap_certificate" : "",
+      "vcenter_password" : "******",
+      "nsxv_metadata_proxy_ips" : "",
+      "vcenter_certificate" : "",
+      "region_name" : "",
+      "nsxv_management_network_moref" : "",
+      "public_hostname" : "",
+      "management_default_gateway" : "",
+      "dvs_default_interface_name" : "eth2",
+      "horizon_regions" : "",
+      "internal_vip" : "",
+      "cinder_folder" : "Volumes",
+      "dvs_integration_bridge" : "br-dvs",
+      "nsxv_metadata_network" : "",
+      "vcenter_insecure" : "false",
+      "public_vip" : "192.168.112.161",
+      "glance_datastores" : "vio-datacenter:vdnetSharedStorage:100",
+      "admin_password" : "******",
+      "nsxv_metadata_proxy_netmask" : "",
+      "nsxv_datastore_moref" : "",
+      "dhcp_domain" : "",
+      "nsxv_cluster_moref" : "",
+      "management_network" : "",
+      "nsxv_insecure" : "",
+      "neutron_backend" : "dvs",
+      "keystone_backend" : "sql",
+      "nsxv_certificate" : "",
+      "vcenter_ip" : "vxlan-vm62.nimbus-tb.eng.vmware.com",
+      "ceilometer_enabled" : "false",
+      "nsxv_metadata_default_gateway" : "",
+      "glance_folder" : "/images",
+      "nsxv_datacenter_moref" : "",
+      "admin_user" : "admin",
+      "meter_interval" : "",
+      "admin_tenant_name" : "admin"
+    }
+  }, {
+    "name" : "Compute",
+    "roles" : [ "Compute" ],
+    "instanceNum" : 1,
+    "cpuNum" : 8,
+    "memCapacityMB" : 16384,
+    "swapRatio" : 1.0,
+    "haFlag" : "on",
+    "attributes" : {
+      "region_name" : "nova"
+    },
+    "nodeAttributes" : [ {
+      "cluster_name" : "compute_cluster",
+      "datastore_regex" : "vdnetSharedStorage",
+      "cluster_moid" : "domain-c25"
+    } ]
+  } ],
+  "vcClusters" : [ {
+    "name" : "mgmt_cluster",
+    "moid" : "domain-c7"
+  } ],
+  "networkConfig" : {
+    "METADATA_NETWORK" : [ "VM Network" ],
+    "REPL_NETWORK" : [ "VM Network" ],
+    "EXTERNAL_NETWORK" : [ "vio-dvpg" ],
+    "MGT_NETWORK" : [ "VM Network" ],
+    "DATA_NETWORK" : [ "VM Network" ]
+  },
+  "networkings" : [ {
+    "name" : "vio-dvpg",
+    "portGroup" : "vio-dvpg",
+    "isDhcp" : false,
+    "type" : "static",
+    "ipBlocks" : [ {
+      "beginIp" : "192.168.112.161",
+      "endIp" : "192.168.112.161"
+    } ],
+    "gateway" : "192.168.112.1",
+    "netmask" : "255.255.255.0"
+  }, {
+    "name" : "VM Network",
+    "portGroup" : "VM Network",
+    "isDhcp" : false,
+    "type" : "static",
+    "dns1" : "192.168.111.1",
+    "ipBlocks" : [ {
+      "beginIp" : "192.168.111.160",
+      "endIp" : "192.168.111.182"
+    } ],
+    "gateway" : "192.168.111.1",
+    "netmask" : "255.255.255.0",
+    "dnsList" : [ "192.168.111.1" ]
+  } ],
+  "specFile" : true,
+  "attributes" : {
+    "deployment_type" : "SINGLEVM"
+  }
+}

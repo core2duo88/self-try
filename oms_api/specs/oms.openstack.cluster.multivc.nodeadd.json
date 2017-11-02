@@ -1,0 +1,11 @@
+[
+    {
+        "availability_zone_name": "another-az",
+        "cluster_moid": "domain-c7",
+        "cluster_name": "compute_cluster",
+        "datastore_regex": "datastore",
+        "hostname": "compute02",
+        "is_management_vc": "false",
+        "vcenter_ip": "vxlan-1-vm52.nimbus-tb.eng.vmware.com"
+    }
+]
