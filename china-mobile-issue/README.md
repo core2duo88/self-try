@@ -82,12 +82,12 @@
 	
 	![](../Image/nova-hypervisor-list.png)
 
-#### **中兴**
+#### **二、中兴**
 1. vpn可以访问中兴vm的8080端口，通过移动的跳板机访问不了
 	- **问题描述**：中兴在VIO部署的虚机，内部启动服务占用8080端口，为虚机绑定floating ip，在外部网络通过挂在vpn可以访问该虚机8080的应用，通过移动内部jumphost无法访问8080的应用。感觉应该是jumphost的问题，与VIO无关
 	- **解决方案**：中兴测试发现，不绑定floating ip，通过将vm挂在到external network上面，手动配置一个外部网络的ip，就可以再移动jumphost上面访问该vm的8080服务，简介绕过去了这个问题
 
-#### **VIO额外配置**
+#### **三、VIO额外配置**
 
 1. neutron 关闭spoofguard（**注：关闭spoofguard后，创建虚拟机是不能配置安全组**）
 	- **操作步骤**
@@ -106,8 +106,11 @@
 		1. 依次点击ESXi host->Configure->Security Profile->Edit
 		2. enable "VM serial port connected over network"和"VM serial port connected over vSPC"端口。
 		3. 点击ok保存
+3. 添加新的计算节点
 
-#### **Glance 常用指令**
+	由于172.30.4.14的host经常down掉，决定将这个节点替换掉，移动提供了新的刀片服务器，ip地址是172.30.4.25。咱们自己部署的ESXi 6.5，用户名/密码信息与之前的节点一致。现已添加至vc。后续会将14替换掉。
+	
+#### **四、Glance 常用指令**
 
 1. 基于vmdk file创建镜像
 
