@@ -1,0 +1,481 @@
+ 1  vim /opt/vmware/vio/etc/omjs.properties
+    2  tailf /var/log/column/ansible.log
+    3  ssh root@172.30.2.11
+    4  ping 172.30.2.11
+    5  tailf /var/log/column/ansible.log
+    6  ls
+    7  cd
+    8  ls
+    9  vim cloudadmin.rc
+   10  source cloudadmin.rc
+   11  export OS_PASSWORD=admin
+   12  neutron net-list
+   13  vim cloudadmin.rc
+   14  source cloudadmin.rc
+   15  nova list
+   16  vim cloudadmin.rc
+   17  source cloudadmin.rc
+   18  neutron net-list
+   19  scp cloudadmin.rc loadbalancer01
+   20  scp cloudadmin.rc loadbalancer01:
+   21  scp cloudadmin.rc loadbalancer01:~
+   22  ls
+   23  exit
+   24  cd /root/
+   25  ls
+   26  vim cloudadmin.rc
+   27  exit
+   28  cd
+   29  vim cloudadmin.rc
+   30  source cloudadmin.rc
+   31  nova list
+   32  vim cloudadmin.rc
+   33  source cloudadmin.rc
+   34  export OS_PASSWORD=vmware
+   35  nova list
+   36  exit
+   37  cd
+   38  vim cloudadmin.rc
+   39  source cloudadmin.rc
+   40  nova list
+   41  exxit
+   42  exit
+   43  ls
+   44  cd
+   45  ls
+   46  mv CloudOpera_CSMV200R017C10SPC300_Fusion_X86_64_SUSE11.qcow2 /var/www/images
+   47  长�cd /var/www/images
+   48  ls
+   49  cd /var/www/images
+   50  ls
+   51  rm -rf CloudOpera_CSMV200R017C10SPC300_SUSE_X86_64_pkg.iso
+   52  ls
+   53  cd
+   54  exit
+   55  ls
+   56  cd
+   57  vim cloudadmin.rc
+   58  glance image-list
+   59  vim cloudadmin.rc
+   60  source cloudadmin.rc
+   61  glance inmage-list
+   62  glance image-list
+   63  cd /var/www/images
+   64  ls
+   65  glance image-create name="huawei-onap-image" disk_format=vmdk container_format=bare is_public=true
+   66  glance image-create -h
+   67  glane image-create
+   68  glance image-create
+   69  glance image-list
+   70  glance image-delete ebe271cb-1ae0-420b-993a-58274d0fca8a
+   71  glance image-create --help
+   72  ls
+   73  exit
+   74  ls
+   75  cd
+   76  ls
+   77  viocli -h
+   78  viocli deployment -h
+   79  viocli deployment getlogs
+   80  长cd /root/
+   81  ls
+   82  tar -zxvf 201709151243.tgz
+   83  ls
+   84  cd 201709151243
+   85  ls
+   86  cd loadbalancer01/
+   87  ls
+   88  cd logs/
+   89  ls
+   90  cd apache2/
+   91  ls
+   92  vim access.log
+   93  vim cinder
+   94  vim cinder.log
+   95  vim openstack_dashboard-access.log
+   96  vim keystone.log
+   97  vim error.log
+   98  cd
+   99  cd /var/log/
+  100  ls
+  101  cd apache2/
+  102  ;s
+  103  ls
+  104  vim error.log
+  105  exit
+  106  ssh loadbalancer01:~
+  107  cd /root
+  108  ls
+  109  ssh loadbalancer01:~
+  110  ssh loadbalancer01
+  111  ls
+  112  cd
+  113  ls
+  114  vim cloudadmin.rc
+  115  source cloudadmin.rc
+  116  exit
+  117  cd
+  118  ls
+  119  source cloudadmin.rc
+  120  ls
+  121  cd /home/viouser/
+  122  ls
+  123  glance-import import --name windows --url http://172.30.4.41:7080/images/win7.img --image-format raw
+  124  exit
+  125  ls
+  126  cd
+  127  ls
+  128  source cloudadmin.rc
+  129  cd /home/viouser/
+  130  ls
+  131  openstack image create -f cirros-0.3.5-x86_64-disk.vmdk --disk-format vmdk
+  132  openstack image create -f cirros-0.3.5-x86_64-disk.vmdk --disk-format vmdk test
+  133  openstack image create -file cirros-0.3.5-x86_64-disk.vmdk --disk-format vmdk test
+  134  openstack image create --file cirros-0.3.5-x86_64-disk.vmdk --disk-format vmdk test
+  135  cd
+  136  sourtce cloudadmin.rc
+  137  source cloudadmin.rc
+  138  glance image-list
+  139  glance image-show baf001d7-1ef8-492d-90fd-e32920772a4e
+  140  openstack image create -h
+  141  openstack image create --file /home/viouser/cirros-0.3.5-x86_64-disk.vmdk --property hw_disk_bus=scsi test-1
+  142  openstack image show 03024dba-47c5-4486-8696-db94863ca059
+  143  openstack image create --file /home/viouser/cirros-0.3.5-x86_64-disk.vmdk --property hw_disk_bus=scsi --disk_format vmdk test-1
+  144  openstack image create --file /home/viouser/cirros-0.3.5-x86_64-disk.vmdk --property hw_disk_bus=scsi --disk-format vmdk test-1
+  145  cd ~
+  146  exit
+  147  vim /etc/resolv.conf
+  148  ping 180.76.76.76
+  149  route -n
+  150  ifconfig
+  151  ping 172.30.0.1
+  152  ping www.baidu.com
+  153  ping 172.30.3.200
+  154  ssh cmcc@172.30.3.200
+  155  tracepath 180.76.76.76
+  156  ping 180.76.76.76
+  157  route
+  158  route  -n
+  159  ping 172.30.0.1
+  160  ping 180.76.76.76
+  161  ifconfig
+  162  exitu
+  163  exit
+  164  vim /opt/vmware/vio/etc/omjs.properties
+  165  ls
+  166  exit
+  167  ls
+  168  exit
+  169  exit
+  170  sudo su
+  171  ssh loadbalancer01
+  172  ls
+  173  cd
+  174  ls
+  175  vim cloudadmin.rc
+  176  source cloudadmin.rc
+  177  openstack --debug server list
+  178  source cloudadmin.rc
+  179  openstack --debug server list
+  180  vim cloudadmin.rc
+  181  source cloudadmin.rc
+  182  openstack --debug server list
+  183  vim cloudadmin.rc
+  184  source cloudadmin.rc
+  185  cat cloudadmin.rc
+  186  vim cloudadmin.rc
+  187  source cloudadmin.rc
+  188  openstack --debug server list
+  189  openstack --debug server list --all-tenants
+  190  openstack server list --all-tenant
+  191  nova  list --all-tenant
+  192  nova show c7128797-cd6b-4de3-874f-ffb4230aca08
+  193  neutron  port-list
+  194  neutron  port-list --device_id=c7128797-cd6b-4de3-874f-ffb4230aca08
+  195  neutron  port-list --help
+  196  neutron  port-list --device-id=c7128797-cd6b-4de3-874f-ffb4230aca08
+  197  nova  list --all-tenants
+  198  nova show b0a3a57b-b01b-4c6b-8785-cfeefbcb4a85
+  199  nova  list --all-tenants
+  200  nova show a06dc183-1277-4b7e-bcd8-9492f0e77b2c
+  201  nova  list --all-tenants
+  202  ls
+  203  cat /etc/hosts
+  204  ssh compute01
+  205  ls
+  206  ssh compute01
+  207  ls
+  208  nova list --all-tenants
+  209  nova show d9b5b835-a87e-46b0-933d-d71b73abe09f
+  210  nova list --all-tenants
+  211  nova show 54ec6287-53cf-43cf-b216-e06aea5cd06b
+  212  nova list --all-tenants
+  213  ls
+  214  cat /etc/hosts
+  215  ssh compute01
+  216  exit
+  217  cd
+  218  source cloudadmin.rc
+  219  nova list --all-tenants
+  220  nova show a8f07089-acf9-4398-8dcb-1ed33bbd2436
+  221  nova list --all-tenants
+  222  ls
+  223  source cloudadmin.rc
+  224  ls
+  225  cat /etc/hosts
+  226  ssh compute04
+  227  exit
+  228  cd
+  229  ls
+  230  source cloudadmin.rc
+  231  neutron  network-list
+  232  neutron  network list
+  233  neutron   net-list
+  234  neutron   net-list | grep d1945e3f-9402-426f-b090-b1f89664a335
+  235  neutron  port-list
+  236  neutron  port-list | grep d1945e3f-9402-426f-b090-b1f89664a335
+  237  neutron  net-list  | grep 64ac3d
+  238  neutron  net-list  | grep  861ac924
+  239  neutron  net-list  | grep  ae9e5ffd-6516-48a1-aa61-504ba459dd9b
+  240  neutron  net-list  | grep  ae9e5ffd-6516-48a1-aa61-504ba459dd9b
+  241  neutron  net-show  ae9e5ffd-6516-48a1-aa61-504ba459dd9b
+  242  nova list
+  243  ping 66.66.1.7
+  244  ping   172.30.25.12
+  245  ls
+  246  pwd
+  247  ifconfig
+  248  route -n
+  249  ls
+  250  lw
+  251  pwd
+  252  ls
+  253  cd
+  254  exit
+  255  cd
+  256  ls
+  257  source cloudadmin.rc
+  258  nova list --all-tenants
+  259  nova list --all-tenants | grep 172.30.4.41
+  260  nova list --all-tenants | grep 7d9decd6-862d-4ae6-89d8-605d426429e4
+  261  cd
+  262  source  cloudadmin.rc
+  263  nova list --all-tenants
+  264  nova list --all-tenants | grep shutdown
+  265  nova list --all-tenants | grep -i shutdown
+  266  ls
+  267  cat /etc/hosts
+  268  ssh compute02
+  269  exit
+  270  cd
+  271  source cloudadmin.rc
+  272  ls
+  273  nova show b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  274  nova show 836067a9-8d04-431c-8f19-36f9a60cee96
+  275  nova --help
+  276  nova reset-state  --help
+  277  nova reset-state
+  278  nova reset-state   --active b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  279  nova show  b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  280  nova restart b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  281  nova reboot b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  282  nova reboot --debug  b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  283  nova reboot    b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  284  nova start    b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  285  ls
+  286  source cloudadmin.rc
+  287  nova list --all-tenants | grep -i shutdown
+  288  nova reset-state
+  289  nova --help
+  290  nova show ad84687142954434825d32b5b5a2f7a4
+  291  nova show b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  292  nova  reset-status  --active b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  293  nova  reset-state  --active b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  294  nova show b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  295  nova reboot b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+  296  nova  list --all-tenants | grep shutdown
+  297  nova  list --all-tenants | grep -i shutdown
+  298  nova start 836067a9-8d04-431c-8f19-36f9a60cee96
+  299  nova reset-state
+  300  nova reset-state  --active  836067a9-8d04-431c-8f19-36f9a60cee96
+  301  nova show 836067a9-8d04-431c-8f19-36f9a60cee96
+  302  nova  reboot 836067a9-8d04-431c-8f19-36f9a60cee96
+  303  nova show   d50d3640-ee4d-4ee6-9194-4019cc243077
+  304  nova reset-state --active d50d3640-ee4d-4ee6-9194-4019cc243077
+  305  nova show d50d3640-ee4d-4ee6-9194-4019cc243077
+  306  nova  reboot d50d3640-ee4d-4ee6-9194-4019cc243077
+  307  nova list --all-tenants | grep -i shutdown
+  308  nova list --all-tenants
+  309  exit
+  310  cd
+  311  source cloudadmin.rc
+  312  ls
+  313  nova list --all-tenants
+  314  nova list --all-tenants | grep 172.30.25.20
+  315  ping 172.30.25.10
+  316  ping  10.10.11.5
+  317  ping   172.19.2.4
+  318  ping 172.30.25.1
+  319  nova show 10764c0b-37ca-4d6b-a32b-e953beb19b4c
+  320  ping 172.30.25.20
+  321  route -n
+  322  exit
+  323  ls
+  324  cd
+  325  cat /etc/hosts
+  326  ls
+  327  source cloudadmin.rc
+  328  nova list --all-tenants
+  329  nova list
+  330  ls
+  331  cinder list
+  332  glance image-list
+  333  ls
+  334  nova list
+  335  neutron  net-list
+  336  ping 172.19.1.1
+  337  ping 172.19.1.2
+  338  ping 172.19.1.1
+  339  ping 172.19.2.1
+  340  ping 172.19.2.2
+  341  neutron  net-list
+  342  ping 172.30.25.1
+  343  ping 172.30.25.2
+  344  ping 172.30.25.20
+  345  ping 172.30.25.21
+  346  ping 172.30.25.20
+  347  ping 172.30.25.2
+  348  ping 172.30.25.10
+  349  ping 172.30.25.20
+  350  ls
+  351  cat /etc/hosts
+  352  ssh loadbalancer01
+  353  ls
+  354  ssh loadbalancer01
+  355  ssh-keygen  -f "/root/.ssh/know_hosts" -R loadbalancer01
+  356  ssh loadbalancer01
+  357  exit
+  358  ls
+  359  cd
+  360  source cloudadmin.rc
+  361  openstack service list
+  362  openstack service status
+  363  ls
+  364  exit
+  365  cd
+  366  ls
+  367  source cloudadmin.rc
+  368  ls
+  369  nova list
+  370  exit
+  371  service oms status
+  372  ls
+  373  cd
+  374  ls
+  375  source  ~/cloudadmin.rc
+  376  keystone service list
+  377  keystone service-list
+  378  openstack service list
+  379  openstack  --debug service list
+  380  glance  service-list
+  381  glance  server-list
+  382  glance  server list
+  383  glance  service list
+  384  glance  server list
+  385  glance  service-list
+  386  cd
+  387  ls
+  388  cat  loadbalancer01
+  389  ls
+  390  cd
+  391  exit
+  392  tcpdump -nei eth0
+  393  tcpdump -nei eth0 icmp
+  394  ping 172.30.4.50
+  395  cd
+  396  ls
+  397  source cloudadmin.rc
+  398  nova list --all-tenants
+  399  ls
+  400  source cloudadmin.rc
+  401  nova list --all-tenants
+  402  vim cloudadmin.rc
+  403  nova  --debug list
+  404  ls
+  405  cat cloudadmin.rc
+  406  source cloudadmin.rc
+  407  nova list
+  408  ls
+  409  exit
+  410  cd
+  411  ls
+  412  source cloudadmin.rc
+  413  nova list --all-tenants
+  414  nova list --all-tenants | grep -i shutdown
+  415  nova reset-state --active ZTE_xGW_39_PFU_1   --all-tenants
+  416  nova reboot --soft
+  417  nova list --all-tenants | grep -i shutdown
+  418  nova reset-state --stop ZTE_xGW_39_PFU_1   --all-tenants
+  419  nova list --all-tenants | grep -i shutdown
+  420  cat /etc/hosts
+  421  ssh compute01
+  422  exit
+  423  ls
+  424  cd
+  425  ls
+  426  source  cloudadmin.rc
+  427  vim cloudadmin.rc
+  428  source cloudadmin.rc
+  429  nova list
+  430  vim cloudadmin.rc
+  431  source cloudadmin.rc
+  432  nova list
+  433  nova list --all-tenants
+  434  nova list --all-tenants | grep -i error
+  435  nova reset-state --active ZTE_xGW_39_PFU_1
+  436  nova reset-state --active ZTE_xGW_39_PFU_1 --all-tenants
+  437  nova  reboot ZTE_xGW_39_PFU_1 --all-tenants
+  438  nova  restart --soft  ZTE_xGW_39_PFU_1 --all-tenants
+  439  nova   --help
+  440  nova  reboot --soft  ZTE_xGW_39_PFU_1 --all-tenants
+  441  nova  reboot  --hard  ZTE_xGW_39_PFU_1 --all-tenants
+  442  nova help reboot
+  443  nova list --all-tenants | grep -i error
+  444  exit
+  445  cd
+  446  source cloudadmin.rc
+  447  nova list --all-tenants
+  448  nova list --all-tenants | grep -i shutdown
+  449  nova start ZTE_xGW_39_PFU_1
+  450  nova start ZTE_xGW_39_PFU_1  --all-tenants
+  451  nova reset-state --active  ZTE_xGW_39_PFU_1  --all-tenants
+  452  nova start ZTE_xGW_39_PFU_1  --all-tenants
+  453  nova reboot --hard  ZTE_xGW_39_PFU_1  --all-tenants
+  454  nova restart --hard  ZTE_xGW_39_PFU_1  --all-tenants
+  455  ls
+  456  cp cloudadmin.rc cloudadmin.rc.back
+  457  vim cloudadmin.rc.back
+  458  source cloudadmin.rc.back
+  459  nova list
+  460  vim cloudadmin.rc.back
+  461  source cloudadmin.rc.back
+  462  nova list
+  463  vim cloudadmin.rc.back
+  464  source cloudadmin.rc
+  465  nova list --all-tena
+  466  nova list --all-tenants | grep -i shutdown
+  467  nova list --all-tenants | grep -i ZTE
+  468  cd
+  469  source cloudadmin.rc
+  470  nova list --all-tenants | grep -i vUGW
+  471  nova list --all-tenants | grep -i ZXUN
+  472  nova list --all-tenants | grep -i CGP_SBC
+  473  nova list --all-tenants | grep -i  SBC1_
+  474  cd
+  475  ls
+  476  cd /var/log/
+  477  ls
+  478  cd /var/lib/vio/ansible/
+  479  ls
+  480  vim start-controller.yml
+  481  exit

@@ -129,3 +129,10 @@
 	```bash
 	openstack image create --container-format ova --public --file ***.ova --disk-format vmdk <image_name>
 	```
+
+#### **五、文件备份**
+
+1. OMS 配置文件 [omjs.properties](./backup/omjs.properties)
+2. Neutron 配置文件 [neutron.conf](./backup/neutron.conf)
+3. loadbalancer01节点history [loadbalancer01-history](./backup/loadbalancer01-history)
+4. oms节点history [oms-history](./backup/oms-history)

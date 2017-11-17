@@ -1,0 +1,2000 @@
+neutron --debug port-show f7eed330-0487-41c6-abfc-d4f00d6310e8
+neutron port-list |grep XGW_21
+neutron port-list |grep GW_21
+neutron port-show 7d7ae0e8-c785-41aa-bb65-4bb55ab2c0d2
+neutron port-list |more
+neutron port-list 
+nova list
+nova list --all-
+nova start ZTE_xGW_21_CDB_1
+nova start 22f4deb6-2144-4274-900a-09156278e042
+nova start b81e99e0-2898-4ddd-8810-7face39758d8
+nova list --all-
+cd /etc/fernet/
+cp nova.key root.key
+ps -ef | grep neutron-server
+service neutron-server stop
+√
+/usr/bin/neutron-server --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugins/vmware/dvs.ini
+cd
+source cloudadmin.rc 
+nova list
+neutron port-list
+neutron port-show CP_ZTE_xGW_39_GSU_1_SUBNET_MEDIA_INT_NET2
+neutron port-delete CP_ZTE_xGW_39_GSU_1_SUBNET_MEDIA_INT_NET2
+neutron port-show CP_ZTE_xGW_39_GSU_1_SUBNET_MEDIA_INT_NET2
+nova show 566cfec6-5f2c-42ad-94de-0fde0f5fbc2a
+nova list --all-t
+neutron port-delete CP_ZTE_xGW_39_GSU_1_SUBNET_MEDIA_INT_NET2
+neutron port-show CP_ZTE_xGW_39_GSU_1_SUBNET_MEDIA_INT_NET2
+neutron port-list
+neutron net-list
+neutron net-delete cdb70877-83cc-481b-89dc-592b2684f6cb
+neutron net-list
+glance image-list
+neutron net-delete VGW_MGT_NET
+neutron net-list
+nova list
+cd /var/log/neutron/
+ls
+tailf neutron-server.log
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+tailf neutron-server.log
+cd /usr/lib/python2.7/dist-packages/neutron
+ls
+vim plugins/ml2/plugin.py
+mysql
+vim plugins/ml2/plugin.py
+vim plugins/ml2/db.py
+vim plugins/ml2/plugin.py
+mysql
+tcpdump -nei eth1 | grep DHCP
+ping 172.30.2.105
+vi neutron.conf
+cd
+pwd
+cd
+cd /usr/lib/python2.7/dist-packages/neutron
+ls
+vim plugins/ml2/plugin.py
+nova list --all-t
+cd
+source cloudadmin.rc 
+nova list --all-t
+neutron port-list
+neutron net-list
+ps -ef | grep neutron-server
+service neutron-server status
+kill 30707
+service neutron-server status
+ps -ef | grep neutron-server
+service neutron-server restart
+ps -ef | grep neutron-server
+nova list
+neutron port-list
+nova delete test1
+watch neutron port-list
+neutron port-list
+cd
+ls
+source cloudadmin.rc 
+openstack server list
+ifconfig
+exit
+cd 
+ls
+cd /etc/neutron/
+ls
+vim neutron.conf.17507.2017-10-13\@11\:10\:23~ 
+vim neutron.conf
+ll
+vim neutron.conf.21350.2017-10-19@03:35:20~
+cp neutron.conf neutron.conf.bac
+vim neutron.conf.bac 
+ping 172.30.4.47
+exit
+vim  /usr/lib/python2.7/dist-packages/cinder/volume/flows/manager/create_volume.py
+service cinder-volume restart
+vim /var/log/cinder/cinder-volume.log
+ls
+vim /usr/lib/python2.7/dist-packages/nova/virt/vmwareapi/vmops.py
+sudo service nova-api restart
+tail -f /var/log/nova/nova-api.log
+exit
+cd 
+ls
+source cloudadmin.rc 
+nova image-list
+export OS_PASSWORD=vmware
+nova image-list
+vim cloudadmin.rc 
+source cloudadmin.rc 
+vim cloudadmin.rc 
+source cloudadmin.rc 
+nova image-list
+nova image-show 880d50bd-b48a-4fc3-9ac1-24dab0d6237c
+nova image-show 366a89a6-cdd8-4503-966f-aa52fb08ac54
+nova image-list
+exit
+cd 
+ls
+source cloudadmin.rc 
+ls
+nova list
+openstack server create -h
+nova server-group-list
+vim /etc/nova/nova.conf
+nova server-group-list
+source cloudadmin.rc 
+nova server-group-list
+vim cloudadmin.rc 
+nova server-group-list
+source cloudadmin.rc 
+nova server-group-list
+nova server-group-create -h
+nova server-group-create 
+nova server-group-create  --policy anti-affinity anti-affinity
+nova server-group-create  anti-affinity anti-affinity
+nova server-group-list
+openstack server create -h
+openstack server create --image --flavor --hint group=4be4cc5c-c62c-4f57-b320-ff8307582e2a \
+nova image-list
+nova flavor-list
+openstack server create --image 450035c4-25dc-45ff-985b-2f4bdb298ec6 --flavor m1.small --hint group=4be4cc5c-c62c-4f57-b320-ff8307582e2a --nic net-id= test\
+cd /etc/neutron/
+ls
+vim neutron.conf
+vim neutron.conf.bac 
+rm -rf neutron.conf
+mv neutron.conf.bac neutron.conf
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+ls
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+ps -aux|grep neutron-server
+ll
+chown neutron:neutron neutron.conf
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-
+tail -f /var/log/neutron/neutron-server.log
+openstack server create --image 450035c4-25dc-45ff-985b-2f4bdb298ec6 --flavor m1.small --hint group=4be4cc5c-c62c-4f57-b320-ff8307582e2a --nic net-id=31cd4acb-ecc6-4950-b06b-3121447a6d39 --min 7 --max 7 test
+cd /usr/lib/python2.7/dist-packages/
+ls
+cd neutron
+ls
+cd 
+ls
+ll
+cd ..
+ll
+cd viouser/
+ll
+exit 
+ls
+cd /home/
+ls
+cd viouser/
+ls
+cp /root/cloudadmin.rc  cloudzte.rc
+ls
+vi cloudzte.rc 
+vi
+vi cloudzte.rc 
+rm -f ml2_neutron_driver.py
+ll
+cd common/rest/ml2_zenic/
+ll
+cp ml2_zenic_restconf.py ml2_zenic_restconf.py.bak1
+ll
+rm -f ml2_zenic_restconf.py
+ll
+pwd
+cd ..
+ll
+cd common/rest/ml2_zenic/
+ll
+vim ml2_zenic_restconf.py
+cd ..
+vim ml2_neutron_driver.py
+ll
+vim /usr/local/lib/python2.7/dist-packages/networking_zte/l3/zenic_agent.py
+vim /etc/neutron/neutron.conf
+nova boot --image ubuntu-pass --flavor 1 --nic net-name=njx-1 --availability-zone nova:compute01 njx-vm1
+sudo nova boot --image ubuntu-pass --flavor 1 --nic net-name=njx-1 --availability-zone nova:compute01 njx-vm1
+su
+ll
+vim ml2_zenic_restconf.py
+cd ..
+cd l3/
+vim zenic_agent.py
+cd /usr/lib/systemd/system/
+ll
+cp neutron-zenic-agent.service /lib/systemd/system
+cd /lib/systemd/system
+ll
+ll | grep neutron
+cd /usr/bin/
+ll
+ll | grep neutron
+chmod 755 neutron-zenic-agent 
+ll | grep neutron
+systemctl daemon-reload
+cd /etc/neutron/
+ll
+vim neutron.conf
+service neutron-server status
+service neutron-server restart
+service neutron-server status
+service neutron-zenic-agent status
+service neutron-zenic-agent restart
+service neutron-zenic-agent status
+service neutron-server status
+service neutron-zenic-agent status
+service neutron-zenic-agent status -l
+service neutron-zenic-agent restart
+service neutron-zenic-agent status -l
+tailf /var/log/neutron/neutron-server.log
+cd /etc/neutron/
+vim neutron.conf
+service neutron-server restart
+tailf /var/log/neutron/neutron-server.log
+cd /var/log/neutron/
+ll
+rm -f neutron-server.log
+ll
+vim neutron-server.log
+vim /etc/neutron/neutron.conf
+service neutron-zenic-agent status
+cd /usr/local/lib/python2.7/
+cd dist-packages/
+ll
+rm -rf networking_zte*
+ll
+cd ..
+cd lib/python2.7/dist-packages/
+cd networking_zte-0.0.1.dev251.egg-info/
+ll
+vim entry_points.txt 
+cd ..
+cd neutron-10.0.1.6420508.egg-info/
+ll
+vim entry_points.txt 
+service neutron-server status
+service neutron-server restart
+service neutron-server status
+service neutron-zenic-agent restart
+service neutron-zenic-agent status
+tailf /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log | grep networking_zte
+cd /home/viouser/
+ls
+source cloudzte.rc 
+neutron port-list
+neutron port-show
+neutron port-list |grep MGT
+neutron port-list |grep CTL
+neutron port-list |grep CTRL
+ping 172.168.100.247
+ping 172.168.100.2
+neutron port-list |grep vxlan
+ping 172.30.2.200
+neutron port-show d5b5387a-f83b-45b6-919b-4f4c98f95d0e
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --name nfvo_provider_port --fixed-ip subnet_id=4f3a79d4-545d-48ba-a731-85db40c4e39b,ip_address=172.30.21.20 provider-zte
+cd 
+source cloudadmin.rc 
+nova host-list
+vim cloudadmin.rc 
+source cloudadmin.rc 
+vim cloudadmin.rc 
+nova host-list
+nova service-list
+ping compute01
+ping compute02
+ping compute03
+ping compute04
+ping compute05
+ping compute06
+ping compute07
+cd 
+source cloudadmin.rc 
+neutron net-create xxxx
+vim /var/log/neutron/neutron-server.log
+vim /etc/neutron/neutron.conf
+vim /var/log/neutron/neutron-server.log
+service neutron-server restart
+neutron net-create 
+neutron net-create 12345
+neutron --debug net-create 12345
+vim /var/log/neutron/neutron-server.log
+dare
+date
+vim /var/log/neutron/neutron-server.log
+ps -ef | grep neutron-server
+vim /var/log/neutron/neutron-server.log
+history
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+neutron net-create 12345
+neutron net-delete 12345
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+neutron net-create 12345
+neutron net-delete 12345
+cd /home/viouser/
+ls
+ll
+ls
+vi vnfm_vm.xml 
+pwd
+vi vnfm_vm.xml 
+vi vm_install_vnfm_single.conf 
+source cloudzte.rc 
+nova boot --flavor 5d786724-f10f-4f3d-9ec6-e30e36449674 --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=78f4f4bb-d308-4b1f-bdfe-c0fa26287321 --nic port-id=ad2a07b3-1bd8-4b23-90b7-662e02aeef08 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+ping 172.30.21.20
+nova list
+nova show  f52e105a-a866-478c-af3e-b4d2e7413f40
+nova boot --image ubuntu-pass --flavor 1 --nic net-name=njx-1 --availability-zone nova:compute01 vm-xhh2
+source cloudadmin.rc
+source cloudzte.rc 
+nova boot --image ubuntu-pass --flavor 1 --nic net-name=njx-1 --availability-zone nova:compute01 vm-xhh2
+nova boot --image ubuntu-pass --flavor 30 --nic net-name=njx-1 --availability-zone nova:compute01 vm-xhh2
+nova boot --image ubuntu-pass --flavor ram_16384m_vcpus_8_disk_10g_14g_0m --nic net-name=njx-1 --availability-zone nova:compute01 vm-xhh2
+vim /var/log/neutron/neutron-server.log
+ls
+cd /home/viouser/
+ls
+source cloudzte.rc 
+nova delete f4425772-b07e-4205-bb33-3c139aeb219b
+nova list
+nova boot --flavor 5d786724-f10f-4f3d-9ec6-e30e36449674 --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=78f4f4bb-d308-4b1f-bdfe-c0fa26287321 --nic port-id=ad2a07b3-1bd8-4b23-90b7-662e02aeef08 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+nova show ed239a87-dd8e-451a-895d-a4f8da931e55
+ls
+source cloudzte.rc 
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --name nfvo_provide_port  --fixed-ip subnet_id=4f3a79d4-545d-48ba-a731-85db40c4e39b,ip_address=172.30.21.3 provider-zte
+neutron port list
+neutron port-list
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name nfvo_mano_port  --fixed-ip subnet_id=fc9a28c4-b4eb-48a0-b251-dafc57c55241,ip_address=192.168.0.3  ZTE_MANO_NET
+pwd
+ll
+vi vm_install_nfvo_single.conf
+vi nfvo_vm_single.xml
+vi vm_install_vnfm_single.conf 
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name VNFM_mano_PORT --fixed-ip subnet_id=fc9a28c4-b4eb-48a0-b251-dafc57c55241,ip_address=93.168.0.4 ZTE_MANO_NET
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name VNFM_mano_PORT --fixed-ip subnet_id=fc9a28c4-b4eb-48a0-b251-dafc57c55241,ip_address=192.168.0.4 ZTE_MANO_NET
+nova boot --flavor 500a08d4-ef0f-4b55-af8f-a8a0424e3e7d --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=96ab152a-8a3c-4550-b436-b84d8a3d5d3e --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list
+source cloudzte.rc 
+nova list
+nova boot --flavor 500a08d4-ef0f-4b55-af8f-a8a0424e3e7d --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=96ab152a-8a3c-4550-b436-b84d8a3d5d3e --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=96ab152a-8a3c-4550-b436-b84d8a3d5d3e --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list
+nova show d47af420-31c2-414a-8c2f-7c11f99b9ac6
+nova delete
+nova delete d47af420-31c2-414a-8c2f-7c11f99b9ac6
+nova delete ed239a87-dd8e-451a-895d-a4f8da931e55
+nova list
+neutron port-list
+neutron port-list |grep 192.168.0.4
+nova boot --flavor 5d786724-f10f-4f3d-9ec6-e30e36449674 --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=78f4f4bb-d308-4b1f-bdfe-c0fa26287321 --nic port-id=2ed24767-9ab9-4e14-9494-828161b12bc4 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=78f4f4bb-d308-4b1f-bdfe-c0fa26287321 --nic port-id=2ed24767-9ab9-4e14-9494-828161b12bc4 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+nova show cea87a74-63e2-4a15-8a5f-dcc6f74630aa
+nova list
+source cloudzte.rc 
+ram_24576m_vcpus_8_disk_10g_14g_0m
+nova boot --image ubuntu-pass --flavor ram_24576m_vcpus_8_disk_10g_14g_0m --nic net-name=njx-1 --availability-zone nova:compute01 vm-njx1
+tailf /var/log/neutron/neutron-server.log
+cat /etc/neutron/neutron.conf
+tailf /var/log/neutron/neutron-server.log
+service neutron-server status
+service neutron-zenic-agent status
+service neutron-server restart
+cat /etc/neutron/neutron.conf
+cd /var/log/neutron/
+ll
+rm -f neutron-server.log
+ll
+rm -f neutron-server.log
+vim neutron-server.log
+vim /etc/neutron/neutron.conf
+cd
+ks
+ls
+cat cloudadmin.rc 
+source cloudadmin.rc 
+neutron net-list
+neutron net-create test
+neutron net-delete test
+nova list 
+nova list -a
+cd
+source cloudadmin.rc 
+nova host-list
+ping compute06
+cd
+source cloudadmin.rc 
+nova list
+nova host-list
+source ~/cloudadmin.rc 
+nova host-list
+nova service-list
+nova help | grep service
+nova service-enable 12
+nova service-enable compute06 nova-compupte
+nova service-enable compute06 nova-compute
+nova service-list
+nova host-list
+nova list --all
+ls
+cd /home/viouser/
+ls
+source cloudzte.rc 
+nova list
+nova delete cea87a74-63e2-4a15-8a5f-dcc6f74630aa
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=96ab152a-8a3c-4550-b436-b84d8a3d5d3e --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=78f4f4bb-d308-4b1f-bdfe-c0fa26287321 --nic port-id=2ed24767-9ab9-4e14-9494-828161b12bc4 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+tailf /var/log/neutron/neutron-server.log
+cd /home/viouser/
+ls
+source cloudzte.rc 
+nova list
+nova delete 8d8d93ba-754f-4259-a47a-343e81d7511f
+nova delete 749a944a-0797-4ae9-bfc7-c6e5590b517b
+cat /etc/neutron/neutron.conf
+vi /etc/neutron/neutron.conf
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+vi /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+cd
+ks
+ls
+source cloudadmin.rc 
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+neutron port-list
+neutron port-show q
+vim /var/log/neutron/neutron-server.log
+neutron port-show v
+neutron port-show 957b3ee9-07f8-45e8-b8e0-85c37fefd59d
+nova list --all-t
+neutron net-show ZTE_NFVO
+nova show ZTE_NFVO
+neutron port-list --device-id 418dad7d-ba72-4e68-bd85-2e58f2dde4c2
+neutron port-show 957b3ee9-07f8-45e8-b8e0-85c37fefd59d
+cd /home/viouser/
+ls
+source cloudzte.rc 
+nova list
+neturon port-list
+neutron port-list
+ll
+vi nfvo_vm_single.xml 
+vi vm_install_nfvo_single.conf 
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=957b3ee9-07f8-45e8-b8e0-85c37fefd59d --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list 5ce1709f-8af2-4f98-9847-62678e327d48
+nova show 5ce1709f-8af2-4f98-9847-62678e327d48
+nova list
+neutron port-list
+nova list
+nova delete  5ce1709f-8af2-4f98-9847-62678e327d48
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=957b3ee9-07f8-45e8-b8e0-85c37fefd59d --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list
+service neutron-server status
+nova list
+nova show ZTE_NFVO
+neutron port list
+neutron port-list
+neutron port-list|grep 172.30.21.3
+neutron port-list|grep 192.100.0.3
+ls
+vi nfvo_vm_single.xml 
+vi vm_install_nfvo_single.conf 
+vi vnfm_vm.xml 
+vi vm_install_vnfm_single.conf 
+neutron port-list 
+neutron port-list |grep 172.30.21.4
+neutron port-list |grep 192.100.0.4
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+date
+tailf /var/log/neutron/neutron-server.log
+cd
+source cloudadmin.rc 
+heat list
+heat stack-list
+openstack help | grep quota
+openstack quota show
+openstack quota set
+openstack quota set ports 1009
+openstack quota set --port 50
+openstack --help quota set
+openstack quota set --ports 100
+openstack project list
+openstack quota set --ports 50 ad84687142954434825d32b5b5a2f7a4
+openstack quota set --ports 100 ad84687142954434825d32b5b5a2f7a4
+openstack quota show ad84687142954434825d32b5b5a2f7a4
+neutron net-list
+glance image-list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=njx-1 xhh-test
+nova show xhh-test
+nova list
+nova show vm-njx1
+nova list
+nova host-list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=njx-1 xhh-test1
+nvoa show xhh-test
+nova show xhh-test
+nova show xhh-test1
+nova list
+vim /var/log/neutron/neutron-server.log
+neutron port-show b0f406ea-d30b-4efb-9eab-8d86b5e297e1
+vim /var/log/neutron/neutron-server.log
+nova list
+cd 
+source cloudadmin.rc 
+ls
+ping 172.30.2.200
+ping compute04
+ping compute06
+ls
+openstack server create --image 450035c4-25dc-45ff-985b-2f4bdb298ec6 --flavor m1.small --hint group=4be4cc5c-c62c-4f57-b320-ff8307582e2a --nic net-id=634ace26-dc44-4681-93a7-6ce7c5ffbe53 --min 7 --max 7 test
+openstack server create --image 450035c4-25dc-45ff-985b-2f4bdb298ec6 --flavor m1.small --hint group=4be4cc5c-c62c-4f57-b320-ff8307582e2a --nic net-id=6d3c6d1f-f7b2-4a3d-bc35-1765e8821aa7 --min 7 --max 7 test-huawei
+cd /home/viouser/
+ls
+source cloudzte.rc 
+ls
+nova list
+nova delete 418dad7d-ba72-4e68-bd85-2e58f2dde4c2
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=957b3ee9-07f8-45e8-b8e0-85c37fefd59d --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list
+ping 172.30.21.1
+ping 172.30.21.3
+ping 172.30.21.4
+nova list
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=d3815dac-ab6a-4f55-9904-59adf9cb43c6 --nic port-id=3f360790-eb88-41cd-b622-2f5962fde1e0 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+ping 172.30.21.3
+ls
+vi vm_install_vnfm_single.conf 
+vi vnfm_vm.xml 
+nova list
+nove delete ZTE_VNFM
+nove delete 3a32df09-3b5e-405a-9ff3-e23d4e621f9f
+nova delete 3a32df09-3b5e-405a-9ff3-e23d4e621f9f
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=d3815dac-ab6a-4f55-9904-59adf9cb43c6 --nic port-id=3f360790-eb88-41cd-b622-2f5962fde1e0 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+neutorn port-list
+neutron port-list
+neutron port-list |grep 172.30.21.4
+neutron port-list |grep 192.100.0.4
+ll
+vi vm_install_vnfm_single.conf 
+vi vnfm_vm.xml 
+vi vm_install_vnfm_single.conf 
+nova list
+nova delete 95de547f-86c3-47de-a11f-f4c06cc1e3f3
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=d3815dac-ab6a-4f55-9904-59adf9cb43c6 --nic port-id=3f360790-eb88-41cd-b622-2f5962fde1e0 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6--file /home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=d3815dac-ab6a-4f55-9904-59adf9cb43c6 --nic port-id=3f360790-eb88-41cd-b622-2f5962fde1e0 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+nova show cc2e7fef-6399-453b-b3b3-a6bd06e2d0ba
+nova lisrt
+nova list
+nova delete cc2e7fef-6399-453b-b3b3-a6bd06e2d0ba
+nova list
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=d3815dac-ab6a-4f55-9904-59adf9cb43c6 --nic port-id=3f360790-eb88-41cd-b622-2f5962fde1e0 --nic port-id=85152b00-9691-4cd4-8dfa-e140c017f1d6 --file vm.xml=/home/viouser/vnfm_vm.xml --file vm_install.conf=/home/viouser/vm_install_vnfm_single.conf --config-drive true ZTE_VNFM
+nova list
+ll
+vi vm_install_vnfm_single.conf 
+vi vm_install_nfvo_single.conf 
+vi vnfm_vm.xml 
+vi nfvo_vm_single.xml 
+nova list
+nova delete 76e9b5fc-3197-43a6-91a0-d9ebdca6b7c1
+nova list
+nova boot --flavor 3ea65390-d5f2-4d4b-a2ed-53d0bea984bd --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=95388b7b-06d1-48f1-8257-28b346b137fa --nic port-id=957b3ee9-07f8-45e8-b8e0-85c37fefd59d --file vm.xml=/home/viouser/nfvo_vm_single.xml --file vm_install.conf=/home/viouser/vm_install_nfvo_single.conf --config-drive true ZTE_NFVO
+nova list
+time
+date
+ping 172.30.21.1
+ping 172.30.21.3
+vim /usr/lib/python2.7/dist-packages/nova/virt/vmwareapi/vmops.py
+vim /usr/lib/python2.7/dist-packages/nova/virt/vmwareapi/constants.py
+vim /usr/lib/python2.7/dist-packages/nova/virt/vmwareapi/vmops.py
+cd 
+sudo service nova-api restart
+tail -f /var/log/nova/nova-api.log
+date
+vim /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+rm -f /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /etc/neutron/neutron.conf
+vim /var/log/neutron/neutron-server.log
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+rm -f /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+cd /usr/lib/python2.7/dist-packages/
+cd neutron/
+vim /var/log/neutron/neutron-server.log
+cd plugins/ml2/
+ll
+vim managers.py
+cp managers.py managers.pybak.niu
+ll
+vim managers.py
+service neutron-server restart
+rm -f /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+vim managers.py
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+cat /etc/neutron/neutron.conf
+tailf /var/log/neutron/neutron-server.log
+service neutron-zenic-agent status
+service neutron-zenic-agent restart
+service neutron-zenic-agent status
+vim managers.py
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+vim managers.py
+service neutron-zenic-agent restart
+service neutron-server restart
+vim /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+service neutron-server restart
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+service neutron-server restart
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+rm -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+cd /usr/lib/python2.7/dist-packages/networking_zte/ml2/
+ll
+vim ml2_neutron_driver.py
+cd ~
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor m1.medium --nic net-name=njx-net1 --availability-zone nova:compute02 vm-njx4
+cd /usr/lib/python2.7/dist-packages/networking_zte
+cd ml2/
+vi ml2_neutron_driver.py
+cd /usr/lib/python2.7/dist-packages/networking_zte/ml2/
+ll
+vim ml2_neutron_driver.py
+ll
+vim ml2_neutron_driver.py
+cd /usr/lib/python2.7/dist-packages/neutron/plugins/ml2/
+ll
+vim managers.py
+cd
+source cloudadmin.rc
+neutron port-list
+neutron port-show f9dd3d32-4c34-4906-8382-14554ca9aa54
+pwd
+ls
+cd /home/viouser/
+ls
+source cloudzte.rc 
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --name test_vnfm_provide_port --fixed-ip subnet_id=4f3a79d4-545d-48ba-a731-85db40c4e39b,ip_address=172.30.21.20 provider-zte
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name test_vnfm_mano_port --fixed-ip subnet_id=ca034748-49c0-4343-801c-910b7c7c3818,ip_address=192.100.0.20 ZTE_MANO_NET
+ls
+cp vnfm_vm.xml test_vnfm_vm.xml
+vi test_vnfm_vm.xml 
+neutron port-list|grep 192.168.1.2
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name test_vnfm_vnflink_port --fixed-ip subnet_id=88cd1d77-9d07-4248-9fea-9a32b3f7c5e8,ip_address=192.168.1.20 test_vnfm_vnfmlink_port
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name test_vnfm_vnflink_port --fixed-ip subnet_id=88cd1d77-9d07-4248-9fea-9a32b3f7c5e8,ip_address=192.168.1.20 ZTE_VNFM_PORT
+neutron port-create --tenant_id f35ee8d528a6443085979eccc302f14a --no-security-groups --name test_vnfm_vnflink_port --fixed-ip subnet_id=88cd1d77-9d07-4248-9fea-9a32b3f7c5e8,ip_address=192.168.1.20 ZTE_VNFM_3_VNF_NET
+ls
+cp vm_install_vnfm_single.conf test_vm_install_vnfm_single.conf
+vi test_vm_install_vnfm_single.conf 
+nova boot --flavor c2a1d16e-488a-4807-9766-2a4b6f6164cc --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=5bd126f6-431a-4f93-b581-346c4a210391 --nic port-id=acbf136a-a15d-4699-8515-a743f7aac869 --nic port-id=80202842-9140-4a7e-ba3e-e3404f193849 --file vm.xml=/home/viouser/test_vnfm_vm.xml --file vm_install.conf=/home/viouser/test_vm_install_vnfm_single.conf --config-drive true ZTE_VNFM_test
+nova list
+nova delete cef1465e-62c8-4df9-82ad-5023e69a406a
+nova list
+nova boot --flavor e8d10edb-71cd-467f-9a46-bec2302d2d49 --image 27511859-65c8-47ad-bb65-74f7e2d3d603 --nic port-id=5bd126f6-431a-4f93-b581-346c4a210391 --nic port-id=acbf136a-a15d-4699-8515-a743f7aac869 --nic port-id=80202842-9140-4a7e-ba3e-e3404f193849 --file vm.xml=/home/viouser/test_vnfm_vm.xml --file vm_install.conf=/home/viouser/test_vm_install_vnfm_single.conf --config-drive true ZTE_VNFM_test
+nova list
+cd 
+source cloudadmin.rc 
+netron port-create -h
+netron port-creatw
+neutron port-create
+neutron port-create 9e5afe30-d4b0-4b51-a96b-8ee8071adab7
+neutron port-create 9e5afe30-d4b0-4b51-a96b-8ee8071adab7 --name test
+ext
+exit
+cd
+ls
+cd /var/log/neutron/
+ls
+grep c7128797-cd6b-4de3-874f-ffb4230aca08 -r *
+ls
+grep NeutronAdminCredentialConfigurationInvalid -r *
+ls
+pwd
+vim neutron-server.log
+grep c7128797-cd6b-4de3-874f-ffb4230aca08 -t *
+grep c7128797-cd6b-4de3-874f-ffb4230aca08 -r  *
+date
+grep "2017-10-27 02:36:59.*c7128797-cd6b-4de3-874f-ffb4230aca08" -r  *
+grep "2017-10-27 02:36:59.*c7128797-cd6b-4de3-874f-ffb4230aca08" -r  * -A 5 -B 5
+cd  /var/log/keystone/
+ls
+grep "2017-10-27 02:36:59" keystone.log
+grep "2017-10-27 02:36:59" keystone.log -A 10 -B 10
+vim  /etc/keystone/keystone.conf
+ls /etc/keystone/fernet-keys/
+grep  "[fernet_tokens] max_active_keys = 3"  keystone.log
+grep  "max_active_keys = 3"  keystone.log
+ls
+l
+cd
+exit
+cd 
+source cloudadmin.rc 
+openstack group list
+history|grep group
+openstack server-group-list
+nova server-group-list
+exit
+cd 
+ls
+source cloudadmin.rc 
+vim cloudadmin.rc 
+Essentials4       2018-03-16      140H3-CKL5H-Q8VRR-0R8HP-CJT3L
+Foundation4       2018-03-16      144T1-CK150-Q8VRR-0C80P-3HVJL
+vim cloudadmin.rc 
+export OS_PROJECT_NAME=huaweionap
+nova list
+vim cloudadmin.rc 
+export OS_PROJECT_DOMAIN_NAME=default
+nova list
+export OS_USER_DOMAIN_NAME=default
+nova list
+nova -h|grep re
+nova list
+nova server-group-list
+nova rebuild 8c72199d-a943-4ec1-9dd2-b3dc0b37edb2
+history -h
+history |grep group
+openstack server create -h
+ls
+source cloudadmin.rc 
+ls
+nova list
+nova delete xxxxx
+cp cloudadmin.rc huaweionap.rc
+ls
+vim huaweionap.rc 
+source huaweionap.rc 
+history|grep group
+nova server-group-create  --policy anti-affinity test-damon
+nova server-group-create anti-affinity test-damon
+nova server-group-create test-damon anti-affinity
+nova server-group-list
+openstack server create --volume 3769eead-e8ba-4208-85ff-b1ed7809ba75 --flavor m1.small --nic net-name test-likai --hint group=38426bc8-6e25-4cc7-a6e4-ed0aa06b2203 test-b
+openstack server create  test-b --volume 3769eead-e8ba-4208-85ff-b1ed7809ba75 --flavor m1.small --nic net-name test-likai --hint group=38426bc8-6e25-4cc7-a6e4-ed0aa06b2203
+openstack server create  test-b --volume 3769eead-e8ba-4208-85ff-b1ed7809ba75 --flavor m1.small --nic net-name=test-likai --hint group=38426bc8-6e25-4cc7-a6e4-ed0aa06b2203
+openstack server create  test-b --volume 3769eead-e8ba-4208-85ff-b1ed7809ba75 --flavor m1.small --nic net-id=9e5afe30-d4b0-4b51-a96b-8ee8071adab7 --hint group=38426bc8-6e25-4cc7-a6e4-ed0aa06b2203
+openstack server create  test-a --volume c734b490-17c5-428c-a834-ee180f805da7 --flavor m1.small --nic net-id=9e5afe30-d4b0-4b51-a96b-8ee8071adab7 --hint group=38426bc8-6e25-4cc7-a6e4-ed0aa06b2203
+nova list
+nova rebuild 8c72199d-a943-4ec1-9dd2-b3dc0b37edb2
+nova volum
+nova volume list
+nova volume-list
+cd ~
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net1 --availability-zone nova:compute02 vm-njx3
+neutron router-create
+neutron help router-create
+source cloudadmin.rc 
+tenant-list
+keystone tenant-list
+neutron router-list
+neutron router-create ext-to-int --tenant-id 
+neutron router-create njx-router1 --tenant-id fd1a6ca90a1b4375a282449ee4e12482
+neutron help router-create
+neutron net-list
+cd /usr/lib/python2.7/dist-packages/networking_zte/ml2/
+ll
+vim ml2_neutron_driver.py
+ll
+vim ml2_neutron_driver.py
+vim /var/log/neutron/neutron-server.log
+scp ml2_neutron_driver.py viouser@172.30.4.41:/home/viouser/
+mysql -uroot
+ls
+exit
+cd 
+ls
+source cloudadmin.rc 
+nova service-list
+exit
+cd 
+source cloudadmin.rc 
+nova service-list
+tail -f /var/log/nova/nova-scheduler.log
+exit
+cd
+source cloudadmin.rc 
+nova list
+neutron port-list --device-id 1e8835c7-8f03-4e75-ab62-3e902fb3c930
+neutron port-show b6da8e1c-c415-4403-b874-ce07edbad9cd
+nova list
+neutron port-list --device-id bfaecabf-a155-4c04-b94d-85c73912d7de
+neutron port-show f71dab98-c5cc-4a31-bff9-fda2a684b40a
+neutron port-create njx-net1 --name port123
+cd /var/log/nova/
+ls
+cd
+ls
+nova boot --flavor 2 --image ubuntu-pass --nic port-name=port123 xhh-test1
+nova boot --flavor 2 --image ubuntu-pass --nic port-id=7e29f2f6-2170-4d8c-ae14-a9b86915896d xhh-test1
+nova list
+nvoa list
+nvao list
+nova port-show port123
+neutron port-show port123
+nova delete xhh-test
+nova delete xhh-test1
+neutron port-list
+neutron port-delete port123
+neutron port-show CP_ZTE_xGW_60_SLB_1_ZTE_VGW_MGT_NET_su1
+cd /var/log/neutron/
+grep fdeec07a-d0a3-4739-9159-3666976d59d9 -r ./
+cd
+ls
+cat cloudadmin.rc 
+export OS_PROJECT_NAME=ZTE_
+export OS_PROJECT_NAME=ZTE_ONAP_PRO
+nova list
+env | grep OS
+openstack project list
+source cloudadmin.rc 
+openstack project list
+export OS_PROJECT_NAME=ZTE_ONAP_PRO
+nova list
+source cloudadmin.rc 
+cd /var/log/neutron/
+grep a58554ff-a99d-423d-9ac1-ad70b39e8fb5 -r ./
+grep a58554ff-a99d-423d-9ac1-ad70b39e8fb5 -r ./ | grep ERROR
+grep a58554ff-a99d-423d-9ac1-ad70b39e8fb5 -r ./ | grep status
+cd /usr/lib/python2.7/dist-packages/
+ls
+cd networking_zte
+grep update_device_up -r ./
+vim l3/zenic_agent.py
+cd ..
+cd vmware_nsx
+grep update_device_up -r ./
+cd /var/log/neutron/
+grep _port_provisioned -r ./
+vim neutron-server.log
+neutron port-show 9f5bc7c1-87b4-4eb5-ad4b-4a1edee83c87
+vim neutron-server.log
+neutron port-show a58554ff-a99d-423d-9ac1-ad70b39e8fb5
+vim neutron-server.log
+cd /usr/lib/python2.7/dist-packages/networking_zte
+vim ml2/ml2_neutron_driver.py
+vim ../neutron/plugins/ml2/managers.py
+vim ml2/ml2_neutron_driver.py
+service neutron-server restart
+nova boot --flavor 2 --image ubuntu-pass --nic net-name=njx-net1 xhh-test2
+neutron port-list --device-id e690e7ff-e75e-49fa-8649-10de42b442dc
+nova list
+vim ml2/ml2_neutron_driver.py
+service neutron-server restart
+nova boot --flavor 2 --image ubuntu-pass --nic net-name=njx-net1 xhh-test1
+neutron port-list --device-id 0342076c-f586-4e87-b2b5-a5d8cc6adc5e
+vim ml2/ml2_neutron_driver.py
+cd
+ip a
+cd /var/log/neutron/
+vim neutron-server.log
+cd 
+ls
+source cloudadmin.rc 
+ls
+nova quota-show --project \
+vim huaweionap.rc 
+nova quota-show --project huaweionap
+nova quota-show 
+source huaweionap.rc 
+nova quota-show 
+nova quota-update -h
+nova quota-update 
+nova quota-show 
+openstack project list
+source cloudadmin.rc 
+openstack project list
+nova quota-update --server-groups 20 ad84687142954434825d32b5b5a2f7a4
+source huaweionap.rc 
+nova quota-show
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+tail -100f /var/log/neutron/neutron-server.log
+cd
+source cloudadmin.rc 
+neutron net-create test123
+neutron net-show test123
+source cloudadmin.rc 
+cd
+source cloudadmin.rc 
+neutron net-delete test123
+neutron net-list
+neutron net-create test_11_xhh --segmentation_id 11
+neutron net-show test-likai
+neutron net-create test_11_xhh --provider:segmentation_id 11
+neutron net-create test_11_xhh --provider:segmentation_id 11 --provider:network_type vxlan
+neutron help subnet-create
+neutron subnet-create test_11_xhh 172.30.4.0/24 --allocation-pool  start=172.30.4.100,end=172.30.4.200
+nova help boot
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=test_11_xhh --availability-zone nova:
+nova host-list
+neutron help create-router
+neutron help router-create 
+cd /home/zte
+cd
+source cloudadmin.rc 
+nova help boot
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=test_11_xhh --availability-zone nova:compute03 ubuntu_test
+nova show ubuntu_test
+cd
+vim /etc/neutron/neutron.conf
+cd /usr/lib/python2.7/
+cd dist-packages/
+cd networking_zte
+ls
+cd l3
+ls
+vim __init__.py
+pwd
+cd 
+ls
+source huaweionap.rc 
+openstack network list
+neutron port-create -h
+neutron port-create 
+neutron net-list
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+neutron port-create 9e5afe30-d4b0-4b51-a96b-8ee8071adab7 --name aaa
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+ls
+cd /var/log/neutron/
+ls
+vim neutron-server.log
+cd /etc/neutron/
+ls
+cd 
+vim /var/log/neutron/neutron-server.log
+cd /etc/neutron/
+ls
+vim neutron.conf
+cd 
+l;s
+ls
+neutron port-list
+neutron port-list|grep 172.30.2.11
+neutron port-list|grep 172.19.2.11
+source cloudadmin.rc 
+neutron port-list|grep 172.19.2.11
+neutron port-list
+neutron port-list|grep 172.19.2.10
+neutron port-list|grep 172.19.2.11
+vim /var/log/neutron/neutron-server
+neutron port-list|grep 172.19.2
+neutron net-list
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+vim /var/log/neutron/neutron-server.log
+neutron port-create db252f2b-bc94-4100-b5e2-1325c9d89469 --name test
+vim /var/log/neutron/neutron-server.log
+neutron net-list
+neutron net-delete fef7dde0-79ae-48ba-9d9a-8921d2227629
+neutron net-list
+neutron port-create 01464614-11e1-4af5-973c-3e18b3d7e528 --name test
+neutron port-create db252f2b-bc94-4100-b5e2-1325c9d89469 --name test
+neutron net-list
+neutron port-create 6d3c6d1f-f7b2-4a3d-bc35-1765e8821aa7 --name test
+neutron port-create 79d0e7b7-cf1f-4700-842b-6c6d2b476a56 --name test
+neutron port-create 2e2eaafa-2dcf-412d-b09c-d8942cc5e1dd --name test
+neutron port-create 36fe44a8-7c0c-493e-8bd1-c362f29feb3a --name test
+neutron port-create 861ac924-73fa-4161-a7c1-6f19bf8ab592 --name test
+neutron port-create e3632f0f-4f1b-4b47-a39a-86b1f6c3e7b4 --name test
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+neutron port-list |grep test
+cd 
+source cloudadmin.rc 
+neutron port-list
+source huaweionap.rc 
+nova list
+nova list|grep damon
+nova image-list|grep 3be1164d-5b06-4c40-95c2-c5813dc33cd1.
+nova image show HUAWEI_rhel_1.1_CloudEdge_V100R017C10SPC100_Euler_GuestOS_Install_VMWARE-disk1
+nova image-show HUAWEI_rhel_1.1_CloudEdge_V100R017C10SPC100_Euler_GuestOS_Install_VMWARE-disk1
+vim /var/log/nova/nova-api.log
+exut
+exit
+cd 
+source l
+source cloudadmin.rc 
+s
+ls
+nova image-list
+neutron net-list
+openstack server create 
+openstack service list
+openstack hypervisor list
+openstack compute list
+compute service list
+openstack compute service list
+openstack server create  test-a --image ubuntu-pass --flavor m1.small --nic net-id=d12322bc-ab07-4da1-bac5-dd89f06c276c --availability-zone nova:compute05
+openstack server create  test-b --image ubuntu-pass --flavor m1.small --nic net-id=d12322bc-ab07-4da1-bac5-dd89f06c276c --availability-zone nova:compute06
+cd 
+source cloudadmin.rc 
+neutron net-list
+neutron port-create ae9e5ffd-6516-48a1-aa61-504ba459dd9b --name test
+neutron port-create e066bef9-0730-4ecc-b121-1295bb7513bd --name test
+neutron port-create 64ac3d26-d0e9-479d-b679-6aeb578d805b --name test
+neutron port-create e066bef9-0730-4ecc-b121-1295bb7513bd --name testneutron
+neutron port-create d12322bc-ab07-4da1-bac5-dd89f06c276c --name test
+neutron port-create 5d183596-25f8-4aeb-ac08-4e669eaa29ab --name test
+neutron help router-create
+neutron router-create --tenant-id f35ee8d528a6443085979eccc302f14a
+neutron router-create njx-r1 --tenant-id f35ee8d528a6443085979eccc302f14a
+neutron router-list
+cd /
+cd ~
+source cloudadmin.rc 
+neutron router-create njx-router1 --tenant-id c8f2dc0e152342c0ab91945c532a8ee1
+neutron router-list
+cd /
+neutron router-create njx-router1 --tenant-id c8f2dc0e152342c0ab91945c532a8ee1
+neutron router-list
+neutron net-list
+neutron help router-create
+cd ~
+neutron router-list
+neutron route-list
+neutron router-list
+neutron subnet-list
+neutron router-list
+neutron router-create njx-router1 --tenant-id c8f2dc0e152342c0ab91945c532a8ee1
+service neutron-zenic-agent status
+cd /etc/neutron/neutron.conf
+cat /etc/neutron/neutron.conf
+cd /etc/neutron/
+ll
+cat l3_agent.ini 
+cat /etc/neutron/neutron.conf
+ll
+cat /etc/neutron/neutron.conf
+vi /etc/neutron/neutron.conf
+cd /usr/lib/python2.7/dist-packages/
+ll
+cd networking_zte-0.0.1.dev251.egg-info/
+ll
+cat entry_points.txt 
+service neutron-l3-agent status
+cd /etc/neutron/
+ll
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+q
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+cd /usr/lib/python2.7/dist-packages/networking_zte
+cd l3/
+ll
+vi zenic_agent.py
+vi /usr/lib/python2.7/dist-packages/networking_zte/qos/zenic_qos_plugin.py
+cd /etc/neutron/
+ll
+vi neutron.conf
+service neutron-server status
+service neutron-server restart
+tailf /var/log/neutron/zenic-agent.log
+cd /etc/neutron/
+vi neutron.conf
+ll
+cp neutron.conf neutron.conf.niu
+ll
+vi neutron.conf
+service neutron-server status
+service neutron-server restart
+service neutron-server status
+service neutron-zenic-agent status
+service neutron-zenic-agent restart
+service neutron-zenic-agent status
+cd ~
+source cloudadmin.rc 
+neutron net-list
+service neutron-server status
+neutron net-list
+cd /etc/neutron/
+vi neutron.conf
+service neutron-server restart
+neutron net-list
+cd /usr/lib/python2.7/dist-packages/networking_zte
+cd l3/
+vi zenic_agent.py
+tailf /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log | grep ERROR
+vim /var/log/neutron/neutron-server.log
+cd /var/log/neutron/
+ll
+cp neutron-server.log neutron-server.log.niu
+ll
+rm -f neutron-server.log
+vim neutron-server.log
+service neutron-zenic-agent status
+service neutron-zenic-agent restart
+service neutron-zenic-agent status
+cd ~
+source cloudadmin.rc 
+neutron net-list
+neutron router-list
+neutron help router-create
+neutron router-create njx-router1 --tenant-id c8f2dc0e152342c0ab91945c532a8ee1
+neutron subnet-list
+neutron router-list
+neutron router-interface-add njx-router1 sub1
+neutron router-interface-add njx-router1 sub2
+neutron router-interface-add njx-router1 7fae0943-2581-43af-bb3a-a61394e1dd82
+neutron router-list
+neutron router-interface-list
+neutron router-interface-del njx-router1 7fae0943-2581-43af-bb3a-a61394e1dd82
+source cloudadmin.rc 
+openstack-status
+ls
+.  cloudadmin.rc 
+ls
+openstack --help
+cd /etc/neutron/
+ls
+systemctl restart network-service
+ping 172.30.21.1
+nova list
+nova list --all
+rpm -qa|grep neutron
+rpm -qa| neutron
+neutron net-list
+neutron net-show  provider-zte
+neutron help net-update
+ip a
+ping 172.30.25.1`
+
+ping 172.30.25.1
+ping 172.30.25.4
+ip a
+ping 172.30.25.1
+ping 172.30.25.4
+nova list
+nova delete xhh-temp
+neutron net-list
+neutron net-show provider-huawei-new
+vim /var/log/neutron/neutron-server.log
+neutron net-list
+neutron net-show provider-zte
+neutron net-create provider-zte --provider:segmentation_id 221 --provider:network_type vlan --provider:physical_network physical_net --router:external True --shared True
+neutron net-create provider-zte --provider:segmentation_id 221 --provider:network_type vlan --provider:physical_network physical_net --router:external true --shared true
+neutron net-create provider-zte --provider:segmentation_id 221 --provider:network_type vlan --provider:physical_network physical_net --router:external --shared
+neutron subnet-create provider-zte-net 172.30.21.0/24
+neutron subnet-create provider-zte-new 172.30.21.0/24
+neutron net-update d9ffd5f7-a801-498b-883c-d753774d6f0a --name provider-zte-new
+neutron net-delete provider-zte-new
+neutron net-create provider-zte-new --provider:segmentation_id 221 --provider:network_type vlan --provider:physical_network physical_net --router:external --shared
+neutron subnet-create provider-zte-new 172.30.21.0/24
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-zte  ubuntu_test
+nova list
+nova delete ff9c1168-507d-4894-9252-9e9d062f596f
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-zte-new  ubuntu_test1
+nvoa delete 2b130892-9f3f-4d9c-a324-bdb02c8646b6
+nova delete 2b130892-9f3f-4d9c-a324-bdb02c8646b6
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-huawei-new  ubuntu_test2
+nova list
+nova delete ubuntu_test1 ubuntu_test2
+nova list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-huawei-new  ubuntu_test2
+ip a
+nova list
+cd /usr/lib/python2.7/dist-packages/
+cd networking_zte/ml2/
+ll
+vi ml2_neutron_driver.py
+tailf /var/log/neutron/neutron-server.log
+service neutron-server status
+service neutron-server restart
+service neutron-server status
+tailf /var/log/neutron/neutron-server.log
+cd 
+source cloudadmin.rc 
+neutron router-list
+neutron net-list | grep external
+cd /var/lo
+cd /var/log/
+ls
+cd neutron/
+ls
+vi zenic-agent.log
+neutron router-gateway
+cd 
+neutron router-gateway-clear router1 
+neutron router-interface-delete router1 5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-delete router1
+history | grep neutron
+neutron net-list | grep extenal
+neutron net-list | grep external
+neutron net-show  external_net
+history  | grep external_net
+history 
+history  | grep neutron
+neutron net-create lhx-ex-net1 --provider:segmentation_id 99 --provider:network_type vlan --provider:physical_network physical_net --router:external --shared
+neutron router-list
+neutron router-create router1
+history | grep 5c6f2e99
+neutron router-interface-add router1  5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-gateway-set router1 lhx-ex-net1
+ls
+cd /var/log/neutron/
+ls
+vi zenic-agent.log
+pwd
+vim /var/log/neutron/zenic-agent.log
+date
+vim /var/log/neutron/zenic-agent.log
+cd /var/log/neutron/
+ll
+cd /var/log/neutron/
+cd ~
+source cloudadmin.rc 
+neutron router-list
+neutron net-list
+neutron router-gateway-del router1 lhx-ex-net1
+neutron router-gateway-clear router1 lhx-ex-net1
+neutron router-list
+neutron net-list
+neutron router-gateway-set router1 external_net
+neutron router-list
+tailf /var/log/neutron/zenic-agent.log
+date
+vim /var/log/neutron/zenic-agent.log
+neutron router-gateway-clear router1 external_net
+neutron router-list
+cd /var/log/neutron/
+ll
+scp zenic-agent.log viouser@172.30.4.41:/home/viouser/
+neutron router-gateway-set router1 external_net
+neutron router-list
+neutron router-gateway-clear router1 external_net
+neutron router-list
+neutron router-gateway-set router1 external_net
+neutron router-list
+neutron net-list
+vim /var/log/neutron/zenic-agent.log
+cd 
+source cloudadmin.rc 
+neutron router-list
+neutron router-gateway-clear router1 501965ea-5d2a-472b-a4e0-b8132289ca13
+neutron router-interface-delete router1 20205ce4-bf42-4a40-a5e8-0ed787e52390
+neutron router-interface-delete router1 5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-delete router1
+neutron router-create lhx-router1
+history  | grep neutron
+neutron net-create net1
+neutron router-interface-add lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-gateway-set lhx-router1 lhx-ex-net1
+neutron router-gateway-clear lhx-router1 lhx-ex-net1
+history | grep neutron
+neutron net-delete lhx-ex-net1
+neutron net-create lhx-ex-net1 --provider:segmentation_id 88 --provider:network_type vlan --provider:physical_network physical_net --router:external --shared
+neutron router-gateway-clear lhx-router1 lhx-ex-net1
+neutron router-gateway-set lhx-router1 lhx-ex-net1
+ls
+cd
+s
+ks
+ls
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider_huawei --availability-zone nova:compute03 ubuntu_test
+neutron net-list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-huawei --availability-zone nova:compute03 ubuntu_test
+nova list
+vim /usr/lib/python2.7/dist-packages/vmware_nsx
+cd/usr/lib/python2.7/dist-packages/vmware_nsx
+cd /usr/lib/python2.7/dist-packages/vmware_nsx
+ls
+vim plugins/vds_mech_driver.py
+service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+cd
+neutron net-list
+neutron net-show test_11_xhh
+neutron net-create provider-huawei-new --provider:network_type vlan --provider:segmentation_id 22 --provider:physical_network physical_net
+vim /var/log/neutron/neutron-server.log
+neutron net-delete provider-huawei-new
+neutron net-create provider-huawei-new --provider:network_type vlan --provider:segmentation_id 22 --provider:physical_network physical_net
+neutron subnet-create provider-huawei-new 172.30.25.0/24
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=provider-huawei-new xhh-temp
+nova list
+ip netns
+neutron net-list
+ip netns exec qdhcp-a5c385ad-6555-4765-874b-3e554ea68fdf bash
+nova list
+vim /etc/neutron/neutron.conf
+service neutron-server restart
+neutron net-create external_net --provider:network_type vlan --provider:segmentation_id 100 --provider:physical_network physical_net --shared --router:external
+neutron subnet-create external_net 101.1.1.0/24
+neutron router-create external_router
+neutron router-gateway-set external_router external_net
+ps -ef | grep l3
+neutron agent-list
+neutron router-gateway-set external_router external_net
+neutron net-list
+neutron router-list
+neutron router-gateway-set njx-router1 external_net
+neutron router-show external_router
+neutron router-delete external_router
+neutron router-show njx-router1
+neutron router-port-list njx-router1
+neutron router-list
+neutron router-port-list
+neutron router-create external_router
+neutron router-gateway-set external_router external_net
+neutron router-gateway-remove njx_router1
+neutron help | grep gateway
+neutron router-gateway-clear njx_router1
+neutron router-gateway-clear njx-router1
+neutron subnet-list
+neutron net-list
+neutron router-interface-add external_router 3aadd618-5f91-4355-95c5-416a530cf6ee
+neutron router-gateway-set external_router external_net
+neutron router-interface-delete external_router 3aadd618-5f91-4355-95c5-416a530cf6ee
+neutron router-delete external_router
+neutron router-port-list njx-router1
+nvoa list
+nova list
+nova delete njx-vm1 njx-vm2
+neutron net-list
+neutron router-interface-delete njx-router1 7fae0943-2581-43af-bb3a-a61394e1dd82
+neutron router-interface-delete njx-router1 d243acb2-3b57-4e3d-9ff2-6df243e5b75f
+neutron net-delete njx-net1
+neutron net-delete njx-net2
+neutron router-delete njx-router1
+neutron router-list
+neutron net-delete njx-1
+lneutron net-delete njx-02
+neutron net-delete njx-2
+neutron port-list --network-id be922143-7d57-4ae0-b776-c7152b0310a7
+nova list --all-t
+neutron port-list --network-id be922143-7d57-4ae0-b776-c7152b0310a7
+neutron port-delete 0575f080-f523-4103-8772-89f81586ee9b
+neutron port-delete 3e98c369-f2da-4232-a48f-4fe4a1077bdc
+neutron port-delete 67285790-1643-4b55-977b-e1a3edd01cdf
+neutron port-delete b1000dd5-d9e4-4bf6-9554-e33905b17f14
+neutron port-list --network-id be922143-7d57-4ae0-b776-c7152b0310a7
+neutron port-delete c07cc8e2-2992-410a-9d2a-5bbd843ac348
+neutron port-delete f834747b-154e-4dbb-99f6-244a0afa1e9e
+neutron net-delete njx-2
+neutron net-list
+neutron net-show 24636bb6-5ec4-4c5b-af08-3500607be762
+neutron net-delete 24636bb6-5ec4-4c5b-af08-3500607be762
+neutron port-list --network-id 9e5afe30-d4b0-4b51-a96b-8ee8071adab7
+neutron router-create router1
+neutron net-list
+neutron router-interface-add router1 5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-gateway-set router1 external_net
+neutron router-interface-delete router1 5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-delete router1
+neutron router-create router1
+neutron router-interface-add router1 5c6f2e99-1a3a-425a-9b24-e2c197244fe6
+neutron router-gateway-set router1 external_net
+cd 
+ls
+source cloudadmin.rc 
+glance image-list
+glance image-update
+glance image-create --help
+glance image-list
+glance image-update --property hw_vif_model=VirtualVmxnet3 450035c4-25dc-45ff-985b-2f4bdb298ec6
+glance image-show 450035c4-25dc-45ff-985b-2f4bdb298ec6
+cd 
+source cloudadmin.rc 
+neutron router-list
+history 
+neutron router-gateway-clear lhx-router1 lhx-ex-net
+neutron router-list
+neutron router-show 564f0f88-2557-402c-a00c-3fd2967fb37a
+neutron router-interface-add lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-interface-delete lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-interface-add lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-gateway-set lhx-router1 lhx-ex-net1
+neutron router-list
+neutron router-gateway-clear lhx-router1 lhx-ex-net1
+neutron router-interface-delete lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-interface-add lhx-router1 04686714-696b-46f8-b0fc-a6c5c1209674
+neutron router-gateway-set lhx-router1 lhx-ex-net1
+neutron router-gateway-clear lhx-router1 lhx-ex-net1
+cd 
+ls
+source cloudadmin.rc 
+ls
+neutron net-list
+neutron net-create
+neutron net-create ssss --provider:segmentation_id 188
+vim /var/log/neutron/neutron-server.log
+ls
+neutron net-list
+neutron net-create 
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test
+neutron net-create  --provider:network_type VLAN --provider:segmentation_id 188 test
+neutron net-create  --provider:network_type Vlan --provider:segmentation_id 188 test
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test --shared True
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test --shared 
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test --shared true
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 test 
+ls
+cp cloudadmin.rc zte-admin.rc
+ls
+vim zte-admin.rc 
+source zte-admin.rc 
+nova list
+vim zte-admin.rc 
+source cloudadmin.rc 
+vim zte-admin.rc 
+source zte-admin.rc 
+neutron net-list
+neutron net-show a31e0a25-ebb4-4e4c-a7f4-05616ce564f3
+neutron net-update
+neutron net-update --provider:segmentation_id 135 a31e0a25-ebb4-4e4c-a7f4-05616ce564f3
+neutron net-update provider:segmentation_id=135 a31e0a25-ebb4-4e4c-a7f4-05616ce564f3
+source zte-admin.rc 
+neutron net-create  --provider:network_type vlan --provider:segmentation_id 188 --provider:physical_network
+neutron net-create ZTE_NET --provider:network_type vlan --provider:segmentation_id 188 --provider:physical_network
+neutron net-show external_net
+neutron net-create ZTE_NET --provider:network_type vlan --provider:segmentation_id 188 --provider:physical_network physical_net
+tailf /var/log/neutron/neutron-server.log
+cd
+ls
+source cloudadmin.rc 
+nova list
+nova show 3f648a2d-c85f-438e-92b9-0b50d106ab4f
+exit
+cd
+source cloudadmin.rc 
+nova show 841f3c21-3ff9-4aa5-bffe-790f91aa4471
+nova list --host compute01
+nova list --host compute01 --all-tenants
+ping 172.19.2.10
+nova list --host  compute01 --all-tenants
+ping 172.30.25.20
+ping 172.30.25.6
+nova list 
+nova show demo1
+ping 172.30.25.6
+ping 172.30.25.4
+ping 172.30.25.2
+ping 172.30.25.1
+ping 172.30.25.9
+nova list
+nova show test2
+neutron  show
+neutron  list 
+neutron  net-show
+neutron  net-list
+neutron   port-list | grep 172.30.25.9
+neutron   port-show   9fa9df8a-373f-401b-87e9-5c9f0fef8e86
+neutron   port-show  c43629b1-67bb-4ac6-b695-2127834a99a2
+neutron   port-list | grep 172.30.25.20
+ping 172.30.25.22
+ping 172.30.25.21
+ping 172.30.25.20
+tail -f /var/log/neutron/neutron-metadata-agent.log
+tail -f /var/log/neutron/neutron-server.log
+grep ERROR  /var/log/neutron/neutron-server.log
+date
+grep ERROR  /var/log/neutron/neutron-dhcp-agent.log
+tail -f  /var/log/neutron/neutron-dhcp-agent.log
+vim  /var/log/neutron/neutron-dhcp-agent.log
+ping 172.30.25.9
+neutron port-list 172.30.25.9
+ls
+cd
+vim /var/log/neutron/neutron-server.log
+date
+vim /var/log/neutron/neutron-server.log
+cd
+exit
+cd
+ls
+source cloudadmin.rc 
+neutron port-list 172.30.25.9
+neutron port-list  | grep 172.30.25.9
+ls
+nova show c43629b1-67bb-4ac6-b695-2127834a99a2
+neutron net-show 9fa9df8a-373f-401b-87e9-5c9f0fef8e86
+neutron net-show c43629b1-67bb-4ac6-b695-2127834a99a2
+neutron port-show c43629b1-67bb-4ac6-b695-2127834a99a2
+neutron port-show 9fa9df8a-373f-401b-87e9-5c9f0fef8e86
+neutron net-list | grep 80872411-40b4-46c1-8c68-982c2caa2dd7
+neutron net-list | grep njx-ney1
+cd
+ls
+exit
+cat /etc/neutron/neutron.conf
+cd /home/
+ll
+cd viouser/
+ll
+vimn /var/log/neutron/neutron-us
+vimn /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+cat /etc/neutron/neutron.conf
+cat /etc/neutron/neutron.conf
+cd 
+ls
+source huaweionap.rc 
+neutron net-listy
+neutron net-list
+neutron port-create d12322bc-ab07-4da1-bac5-dd89f06c276c test
+neutron port-create d12322bc-ab07-4da1-bac5-dd89f06c276c --name test
+neutron port-create 64ac3d26-d0e9-479d-b679-6aeb578d805b --name test
+neutron port-create 2e2eaafa-2dcf-412d-b09c-d8942cc5e1dd --name test
+neutron port-create e066bef9-0730-4ecc-b121-1295bb7513bd --name test
+neutron port-create ae9e5ffd-6516-48a1-aa61-504ba459dd9b --name test
+neutron port-create 6d3c6d1f-f7b2-4a3d-bc35-1765e8821aa7 --name test
+neutron port-create a5c385ad-6555-4765-874b-3e554ea68fdf --name test
+neutron port-list|grep test
+neutron port-delete 1eb824d8-4ae4-451a-8796-48f0ed6b888c
+telnet 192.168.2.166
+exit
+cd
+source cloudadmin.rc 
+nova list --all-tenants | grep -i shutdown
+nova list --all-tenants | grep -i  rhel
+nova list --all-tenants | grep -i  CGSL
+ping 172.30.25.20
+ls
+doc ps
+nova list --all-tenants | grep -i   test
+ping  192.100.0.20
+nova list --all-tenants | grep -i   test
+nova reboot ZTE_VNFM_test
+nova  show ZTE_VNFM_test
+nova list --all-tenants | grep -i   GSU
+nova show ZTE_xGW_60_GSU_1
+ls
+cat cloudadmin.rc 
+ls
+ping 172.30.25.12
+ping 172.30.25.1
+ping 172.30.25.10
+ping 172.30.25.22
+ping 172.30.25.21
+cd
+ping 172.30.25.12
+ls
+exit
+vim neutron.conf.27319.2017-11-09@04:03:10~
+mv neutron.conf neutron.conf.bac-11.9
+mv neutron.conf.27319.2017-11-09@04:03:10~ neutron.conf
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+cd 
+ls
+source cloudadmin.rc 
+neutron net-list\
+neutron net-list
+service neutron-server status
+tail -f /var/log/neutron/neutron-server.log
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+/etc/init.d/neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+tail -f /var/log/neutron/neutron-server.log.1 
+tail -f /var/log/neutron/neutron-server.log
+vim /var/log/neutron/neutron-server.log
+ps -ef | grep neutron
+ps -ef | grep neutron-server
+tail -f /var/log/neutron/neutron-server.log
+vim  /etc/neutron/neutron.conf
+ls
+/etc/init.d/neutron-server status
+cd /etc/neutron/
+ll
+chown neutron:neutron ./neutron.conf
+service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+exit
+vim /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+cd /var/log/neutron/
+ll
+cp neutron-server.log neutron-server.logbak
+ll
+rm -f neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+ll
+vim neutron-server.logbak 
+tailf /var/log/neutron/neutron-server.log
+tailf /var/log/neutron/neutron-server.log | grep ERROR
+tailf /var/log/neutron/neutron-server.log
+cd ~
+source cloudadmin.rc 
+neutron net-list
+cd /etc/neutron/
+ls
+source ~/cloudadmin.rc 
+nova host-list
+export OS_PASSWORD=admin
+nova host-list
+ls
+cat neutron.conf.niu 
+vim neutron.conf.niu 
+ls
+date
+vim neutron.conf
+service neutron-server restart
+cd 
+musql -uroot
+mysql -uroot
+cd 
+source huaweionap.rc 
+nova list
+nova show v
+nova show d50d3640-ee4d-4ee6-9194-4019cc243077
+nova show 8b1da53b-2f29-42e9-8849-d9872e72050e
+nova show 836067a9-8d04-431c-8f19-36f9a60cee96
+nova show 7f19bbea-1186-4f77-b695-6d63ff8c14d6
+ls
+neutron port-list
+cd 
+ls
+source huaweionap.rc 
+ls
+nova list
+nova show d50d3640-ee4d-4ee6-9194-4019cc243077
+nova show 7de2ea90-274c-45d1-b8af-fb8c832966a7
+nova list
+nova show eb80cb23-6f87-433b-ba22-337d3f28f8b3
+date
+cd 
+source huaweionap.rc 
+nova list
+neutron port-list --device-id bf9025e4-f43b-4ab9-914a-128bedb710fc
+neutron port-list --device-id d50d3640-ee4d-4ee6-9194-4019cc243077
+neutron port-list --device-id 836067a9-8d04-431c-8f19-36f9a60cee96
+neutron port-list --device-id bf9025e4-f43b-4ab9-914a-128bedb710fc
+neutron port-list --device-id b31db2bc-d95f-4fa2-81d5-09e9d2ebc017
+exit
+cd
+source cloudadmin.rc 
+openstack  --command list
+openstack  command list
+openstack 
+openstack --debug alarm list
+ceilometer --help
+ceilometer --debug meter-list
+telnet
+telnet 172.30.4.42 8777
+ls
+ps -ef
+ls
+ceilometerven
+d
+c d
+ls
+cd 
+source cloudadmin.rc 
+nova -h
+nova -h|grep list
+nova host-list
+ls
+cd /etc/neutron/
+ls
+vim neutron.conf
+ll
+rm -rf neutron.conf
+date
+vim neutron.conf.9348.2017-10-23@02:34:49~
+vim neutron.conf.bac-11.9
+ll
+vim neutron.conf.niu
+ls
+ll
+vim neutron.conf.bac-11.9
+cp neutron.conf.bac-11.9 neutron.conf
+ll
+sudo chown neutron:neutron neutron.conf
+ll
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+ls
+ll
+vim neutron.conf.13610.2017-11-13@02:30:54~
+rm -rf neutron.conf
+date
+cp neutron.conf.13610.2017-11-13@02:30:54~ neutron.conf
+ll
+sudo chown neutron:neutron neutron.conf
+sudo service neutron-server restart
+tail -f /var/log/neutron/neutron-server.log
+cd /var/log/en
+cd /var/log/neutron/
+vim neutron-server.log
+cd 
+nova host-list
+source cloudadmin.rc 
+nova host-list
+ls
+vim cloudadmin.rc 
+source cloudadmin.rc 
+nova host-list
+ls
+nova service-list
+nova-manage service disable nova-compute compute08
+nova service-disable compute08 nova-compute
+nova service list
+nova service-list
+ls
+source zte-admin.rc 
+nova list
+mysql -uroot
+ip a
+exit
+cd
+source cloudadmin.rc 
+nova host-list
+nova service-list
+nova list
+neutron net-list
+neutron net-show test_11_xhh
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=test_11_xhh --availability-zone nova:compute08 xhh-test-temp
+nova list
+nova delete xhh-test-temp
+neutron net-list
+neutron net-show test-likai
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=test-likai --availability-zone nova:compute08 xhh-test-temp
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=test-likai --availability-zone nova:compute07 xhh-test-temp1
+nova delete xhh-test-temp1 xhh-test-
+nova delete xhh-test-temp
+neutron net-create xhh-test
+neutron subnet-create xhh-test 20.0.0.0/24
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute07 xhh-test-temp1
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute08 xhh-test-temp2
+neutron port-list --device-id 7e80d5b3-f05a-4b49-979e-0dfd26fe91d2
+vim /etc/neutron/neutron.conf
+vim /var/log/neutron/neutron-server.log
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute06 xhh-test-temp3
+nova delete xhh-test-temp3
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute01 xhh-test-temp3
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute02 xhh-test-temp4
+nova list
+nova delete xhh-test-temp4
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute01 xhh-test-temp4
+nova list
+nova delete xhh-test-temp3
+nova show vm-njx1
+nova list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute03 xhh-test-temp5
+nova list
+nova show xhh-test-temp5
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute04 xhh-test-temp6
+nova list
+nova delete xhh-test-temp6
+nova delete xhh-test-temp4
+ip a
+ping 20.0.0.12
+ping 20.0.0.3
+ping 20.0.0.12
+cd
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute01 ubuntu_test123
+nova list
+nova delete ubuntu_test123
+nova list
+nova list --all-t
+nova delete xhh-test
+nova list --all-t
+nova list
+nova show xhh-test-temp5
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute06 xhh-test-temp3
+nova list
+nova reboot xhh-test-temp2
+nova reboot xhh-test-temp1
+nova reboot xhh-test-temp5
+ip netns
+ip netns exec qdhcp-f28991c2-cadf-4559-9987-cf26f83b7f75 bash
+ip netns exec qdhcp-768b6bf0-da2d-4885-b874-294eae865712 bash
+cd ~
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net321 --availability-zone nova:compute05 vm-njx1
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net321 --availability-zone nova:compute07 vm-njx1
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net321 --availability-zone nova:compute03 vm-njx1
+cd /usr/lib/python2.7/dist-packages/networking_zte
+cd ml2/common/rest/ml2_zenic/
+ll
+vi ml2_zenic_restconf.py
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net321 --availability-zone nova:compute03 vm-njx1
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net321 --availability-zone nova:compute06 vm-njx1
+tailf /var/log/neutron/zenic-agent.log
+tailf /var/log/neutron/neutron-server.log
+cd /var/log/neutron/
+ll
+cp neutron-server.log.niu.1113
+cp neutron-server.log neutron-server.log.1113
+rm -f neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+vim neutron-server.log
+c
+vim neutron-server.log
+service neutron-zenic-agent status
+service neutron-l3-agent status
+service neutron-dhcp-agent status
+vim /var/log/neutron/neutron-server.log
+cat /etc/neutron/neutron.conf
+vim /var/log/neutron/neutron-server.log
+cd /var/log/neutron/
+ll
+history | grep image
+cd ~
+source cloudadmin.rc 
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx-net1 --availability-zone nova:compute07 vm-njx1
+vim /var/log/neutron/neutron-server.log
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=net-njx1 --availability-zone nova:compute07 vm-njx1
+cd~
+cd /var/log/neutron/
+ll
+rm -f neutron-server.log
+tailf /var/log/neutron/neutron-server.log
+rm -f neutron-server.log
+ll
+cp neutron-server.log neutron-server.log.niu1114
+vim neutron-server.log
+cd 
+ls
+source huaweionap.rc 
+ls
+neutron net-list
+neutron subnet-show ec6bbc06-5fec-4889-8917-e95a3d75fc76
+neutron subnet-show 1f4f48cd-021d-4d01-af09-bdba3c050042
+neutron subnet-show bdaf0bdf-eed0-4e5a-8161-3c3eac072bc4
+neutron subnet-show c14d4709-08ea-47e6-8dc9-4161447e70c1
+neutron subnet-show 719949b2-3250-49af-9bc1-74a2022e76ae
+neutron subnet-show f175a7be-bea3-443c-bbce-88586100eafb
+glance -h|grep migra
+glance -h
+exit
+cd
+nova list
+source cloudadmin.rc 
+nova list
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=xhh-test --availability-zone nova:compute07 xhh-test-temp4
+nova delete xhh-test-temp1 xhh-test-temp2 xhh-test-temp3 xhh-test-temp1
+nova list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute01 xhh-test-temp1
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute06 xhh-test-temp2
+nova reboot xhh-test-temp1
+nova list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute02 xhh-test-temp3
+nova delete xhh-test-temp1 xhh-test-temp2 xhh-test-temp4
+nova list
+nova help | grep migration
+nova help live-migration
+nova migration xhh-test-temp3 compute08
+nova live-migration xhh-test-temp3 compute08
+nova list
+nova show xhh-test-temp3
+openstack server migrate xhh-test-temp3 --live compute08
+cd
+source cloudadmin.rc 
+nova list
+openstack server migrate xhh-test-temp3 --live compute08
+nova reset-state --active xhh-test-temp3
+nova list
+openstack server migrate xhh-test-temp3 --live compute08
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute07 xhh-test-temp1
+nova list
+nova reset-state --active xhh-test-temp3
+nova list
+openstack server migrate xhh-test-temp1 --live compute08
+nova list
+nova boot --image ubuntu-pass --flavor 2 --nic net-name=xhh-test --availability-zone nova:compute08 xhh-test-temp2
+nova shutdown xhh-test-temp2
+nova stop xhh-test-temp2
+nova start xhh-test-temp2
+openstack server migrate xhh-test-temp2 --live compute07
+cd 
+source cloudadmin.rc 
+nova list
+nova reset-state --active xhh-test-temp1
+nova reset-state --active xhh-test-temp2
+nova list
+source cloudzte.rc 
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx1 --availability-zone nova:compute07 vm-njx2
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx1 --availability-zone nova:compute06 vm-njx1
+vim /etc/neutron/neutron.conf
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx1 --availability-zone nova:compute07 vm-njx1
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx2 --availability-zone nova:compute08 vm-njx3
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx2 --availability-zone nova:compute08 vm-njx4
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx2 --availability-zone nova:compute06 vm-njx4
+nova boot --image ubuntu-pass --flavor 3 --nic net-name=njx2 --availability-zone nova:compute07 vm-njx5
+cd /etc/neutron
+vi neutron.conf
+service neutron-server status
+service neutron-server restart
+vi neutron.conf
+service neutron-server restart
+cd 
+source cloudadmin.rc 
+nova -h|grep migrate
+nova host-servers-migrate
+nova help host-servers-migrate
+nova help migrate
+openstack server create -h
+neutron net-list
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small --hint force_hosts=\
+nova image-list
+nova hypervisor-list
+nova host-list
+nova service-list
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small --hint force_hosts=compute08 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small --hint force_hosts=compute01 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+nova hypervisor-list
+nova hypervisor-show domain-c2904.7d9decd6-862d-4ae6-89d8-605d426429e4
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small  --availability-zone nova:compute08 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small  --availability-zone nova:compute01 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+openstack server create test-migrate-damon --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small  --availability-zone nova:compute02 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+openstack server create test-migrate-damon-2 --nic net-id=a31e0a25-ebb4-4e4c-a7f4-05616ce564f3 --flavor m1.small  --availability-zone nova:compute08 --image 450035c4-25dc-45ff-985b-2f4bdb298ec6
+nova service-list
+nova -h|grep service
+nova service-enable
+nova service-enable compute08 nova-compute
+nova host-list
+cd /opt/vmware/
+ls
+cd /var/lib/
+ls
+cd vio
+exit
