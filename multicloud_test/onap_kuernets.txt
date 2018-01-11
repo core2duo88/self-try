@@ -1,0 +1,53 @@
+
+				blushift + OOM 部署 onap
+ 
+blueshif 部署kubnerte的2个work节点和4个slave节点，用oom的helm配置功能来管理部署onap各个服务，
+由于多节点onap平台里的aai，msb，vid等容器pod会调度不同slave节点，由kubernets的提供dns服务来发现service。
+
+遇到的问题：
+
+1  某些服务pod 创建不成功，一直出现Readiness probe failed: dial tcp <ip>:<port>: getsockopt: connection refused。错误
+
+2  某些onap服务不太稳定，虽然kubctl查看pod正常运行，但是用robot监控监控检查却不对。
+------------------------------------------------------------------------------
+Basic SDNGC Health Check                                              | PASS |
+------------------------------------------------------------------------------
+Basic A&AI Health Check                                               | PASS |
+------------------------------------------------------------------------------
+Basic Policy Health Check                                             | PASS |
+------------------------------------------------------------------------------
+Basic MSO Health Check                                                | FAIL |
+503 != 200
+------------------------------------------------------------------------------
+Basic ASDC Health Check                                               | FAIL |
+DOWN != UP
+------------------------------------------------------------------------------
+Basic APPC Health Check                                               | FAIL |
+404 != 200
+------------------------------------------------------------------------------
+Basic Portal Health Check                                             | PASS |
+------------------------------------------------------------------------------
+Basic Message Router Health Check                                     | PASS |
+------------------------------------------------------------------------------
+Basic VID Health Check                                                | PASS |
+------------------------------------------------------------------------------
+Basic Microservice Bus Health Check                                   | PASS |
+------------------------------------------------------------------------------
+Basic CLAMP Health Check                                              | PASS |
+------------------------------------------------------------------------------
+catalog API Health Check                                              | FAIL |
+502 != 200
+------------------------------------------------------------------------------
+
+3  ONAP 共享dockerdata-nfs文件： 目前的共享方式不方便，需要在多节点上挂载nfs目录。
+   不能利用blueshift 的共享volume 进行挂载
+
+4  pod容器出现oom：blushift salve节点目前不能动态添加，而且没有对容器的监控。容器oom出现后会杀死docker-containerd
+守护进程，导致所有子容器进程失效。
+
+5 dcaegen2 容器部署后，cloudify   执行fabric_plugin 的workflow失败，找不到需要的配置文件。
+
+
+
+
+
