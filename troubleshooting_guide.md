@@ -7,6 +7,8 @@ Content
   * [aai-inst1的resource问题](#aai-inst1的resource问题)
   * [demo init failure in robot](#demo_init_failure)
   * [vid_fetch_service_data_failure](#vid_failed_to_fetch_service_instance_data_form_aai_response_code_404)
+  * [dcae_docker_run_boot_container_failure](#dcae_boot_failure)
+  * [dcae2_install_failure](#dcae2_install_failure)
 
 ### sdc服务不可用
 
@@ -168,6 +170,9 @@ Content
   # 文件: keystone.conf
   # 替换后如下：
   # ServerName http://10.154.2.225:5000
+
+  # 重启apache2服务
+  $ service apache2 restart
   ```
 
   第二步：修改openstack endpoint。将endpoint的带有https的url全部disable，然后创建新的endpoint
@@ -339,3 +344,34 @@ Content
   正常页面如下所示
 
   ![vid_fetch_service_data_ok](Image/vid_searchservice_ok.PNG)
+
+### dcae_boot_failure
+
+  问题描述：在dcae vm中执行/opt/dcae2_install.sh脚本中的`pip install jinja2`时，由于安装pip所使用的python版本问题，导致如下错误：
+
+  ```
+  Traceback (most recent call last):
+  File "/usr/bin/pip", line 11, in <module>
+    sys.exit(main())
+  File "/usr/lib/python2.7/dist-packages/pip/__init__.py", line 215, in main
+    locale.setlocale(locale.LC_ALL, '')
+  File "/usr/lib/python2.7/locale.py", line 581, in setlocale
+    return _setlocale(category, locale)
+  locale.Error: unsupported locale setting
+  ```
+
+  解决办法：在/opt/dcae2_install.sh脚本中`pip install jinja2`的上一行添加`export LC_ALL=C`即可。
+
+  参考链接：[https://askubuntu.com/questions/790116/python-pip-install-xmltodict-fails](https://askubuntu.com/questions/790116/python-pip-install-xmltodict-fails)
+
+### dcae2_install_failure
+
+  问题描述：/opt/config目录下的文件名称与/opt/app/inputs-templates/inputs.yaml文件名称不符，导致dcae2_install.sh脚本运行失败。
+
+  解决办法：将/opt/config目录下的文件改成相应的名称。
+
+  ```
+  # 以tenant_name为例
+  # 操作目录/opt/config
+  $ cp tenant_id.txt tenant_name.txt
+  ```
