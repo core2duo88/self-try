@@ -24,7 +24,7 @@ import random,string
 AUTH_URL = 'http://10.154.2.225:5000'
 USERNAME = 'admin'
 PASSWORD = 'vmware'
-PROJECT_ID = '0013cfe6a3874820b41eecb22e0426f3'
+PROJECT_ID = '0013cfe6a3874820b41eecb22e0426f4'
 
 logger = logging.getLogger(__name__)
 
